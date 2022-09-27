@@ -32,3 +32,28 @@ body {
     line-height: 1;
     font-size: 16px;
 }
+
+@media screen and (max-width: 360px) {
+    body {
+        font-size: 12px;
+    }
+}
+
+$goldHeaders: #ffaa0d;
+$goldText: #ffb500;
+
+%mainText {
+    font-family: "EB Garamond", serif;
+}
+
+@font-face {
+    font-family: "Cheque";
+    src: url("./fonts/Cheque-Black.otf") format("opentype");
+}
+
+h1 {
+    font-family: "Cheque";
+    font-size: 28px;
+    color: $goldHeaders;
+    text-transform: uppercase;
+}
