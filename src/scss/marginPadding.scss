@@ -1,0 +1,19 @@
+@mixin mx($mpx) {
+    margin-right: $mpx + "px";
+    margin-left: $mpx + "px";
+}
+
+@mixin my($mpx) {
+    margin-top: $mpx + "px";
+    margin-bottom: $mpx + "px";
+}
+
+@mixin px($ppx) {
+    padding-right: $ppx + "px";
+    padding-left: $ppx + "px";
+}
+
+@mixin py($ppx) {
+    padding-top: $ppx + "px";
+    padding-bottom: $ppx + "px";
+}
