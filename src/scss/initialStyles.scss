@@ -29,31 +29,44 @@ h6 {
 html,
 body {
     height: 100%;
-    line-height: 1;
+    line-height: 1.3;
     font-size: 16px;
+    background-color: #6d022e;
+    font-family: "EB Garamond", serif;
+    color: #ffffff;
+    letter-spacing: 0.04em;
 }
 
 @media screen and (max-width: 360px) {
     body {
-        font-size: 12px;
+        font-size: 14px;
     }
 }
 
 $goldHeaders: #ffaa0d;
 $goldText: #ffb500;
 
-%mainText {
-    font-family: "EB Garamond", serif;
-}
-
 @font-face {
     font-family: "Cheque";
     src: url("./fonts/Cheque-Black.otf") format("opentype");
 }
 
+h1,
+h2 {
+    color: $goldHeaders;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
 h1 {
     font-family: "Cheque";
     font-size: 28px;
-    color: $goldHeaders;
+}
+
+h3 {
     text-transform: uppercase;
+}
+
+body > div:nth-child(even) {
+    background-color: #222627;
 }
