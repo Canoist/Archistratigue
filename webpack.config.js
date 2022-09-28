@@ -47,13 +47,14 @@ module.exports = {
                     },
                 },
             },
-            {
-                test: /\.(png|jpe?g|gif)$/i,
-                loader: "file-loader",
-                options: {
-                    outputPath: "images",
-                },
-            },
+            // {
+            //     test: /\.(png|jpe?g|gif)$/i,
+            //     loader: "file-loader",
+            //     options: {
+            //         name: "[name].[ext]",
+            //         outputPath: "assets",
+            //     },
+            // },
         ],
     },
     plugins: [
