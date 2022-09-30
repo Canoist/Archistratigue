@@ -1,12 +1,11 @@
 @import "./nullStyles.scss";
 @import "./initialStyles.scss";
-@import "./marginPadding.scss";
 @import "swiper/scss/effect-fade";
 @import "swiper/scss/autoplay";
 @import "swiper/scss/pagination";
 
 .content {
-    @include py(32);
+    padding: 32px 0;
     text-align: center;
 
     &:nth-child(1) {
@@ -22,6 +21,10 @@
             z-index: 5;
             background: url("../../public/assets/ribbon.png") 100% 100%
                 no-repeat;
+            @media screen and (max-width: 1024px) {
+                background: url("../../public/assets/ribbon_mobile.png") 100%
+                    100% no-repeat;
+            }
         }
     }
 }
@@ -35,9 +38,13 @@
     gap: 16px;
 
     margin: 0 auto;
-    @include px(40);
+    padding: 0 40px;
 
     overflow: hidden;
+
+    @media screen and (max-width: 1024px) {
+        padding: 0 24px;
+    }
 
     .hr {
         border-bottom: 1px solid $goldHeaders;
@@ -45,14 +52,51 @@
     }
 
     & p {
-        @include my(19);
+        margin: 0 19px;
+        width: 400px;
+        margin-bottom: 25px;
+
+        @media screen and (max-width: 1024px) {
+            margin-bottom: 60px;
+            width: 311px;
+        }
     }
 }
 
 .content-video {
+    .content-video-mobile {
+        display: none;
+
+        @media screen and (max-width: 500px) {
+            display: inline-block;
+            margin-bottom: 40px;
+        }
+    }
+
+    .content-video-mobile-horizontal {
+        display: none;
+
+        @media screen and (min-width: 500px) and (max-width: 1024px) {
+            display: inline-block;
+            margin-bottom: 40px;
+        }
+    }
+
+    .content-video-desktop {
+        display: inline-block;
+
+        @media screen and (max-width: 1024px) {
+            display: none;
+        }
+    }
+
     p {
         margin-top: 16px;
         margin-bottom: 39px;
+        @media screen and (max-width: 1024px) {
+            width: 311px;
+            margin: 16px auto 24px;
+        }
     }
 }
 
@@ -101,7 +145,6 @@
 
     & img {
         border-radius: 4px;
-        // width: 720px;
         margin: auto;
     }
 
@@ -111,6 +154,7 @@
         .swiper-pagination-bullet {
             width: 6px;
             height: 6px;
+            margin: 0 2px;
         }
 
         .swiper-pagination-bullet-active {
@@ -121,6 +165,10 @@
     .content-slider-content {
         width: 764px;
         margin: 32px auto;
+
+        @media screen and (max-width: 1024px) {
+            width: 579px;
+        }
     }
 
     .content-slider-about {
