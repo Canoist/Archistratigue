@@ -17,7 +17,8 @@
             height: 100%;
             left: 0;
             z-index: 5;
-            background: url("../assets/ribbon.png") 100% 100% no-repeat;
+            background: url("../../public/assets/ribbon.png") 100% 100%
+                no-repeat;
         }
     }
 }
@@ -79,5 +80,30 @@
         p {
             margin-top: 12px;
         }
+    }
+}
+.content-slider {
+    padding: 16px 0;
+
+    & img {
+        border-radius: 4px;
+        width: 720px;
+        margin: auto;
+    }
+
+    .content-slider-content {
+        padding: 38px 0;
+        width: 764px;
+        margin: 0 auto;
+    }
+
+    .content-slider-about {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 700;
+        color: $goldText;
+        text-transform: uppercase;
+    }
+    a {
+        margin-top: 10px;
     }
 }
