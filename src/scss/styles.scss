@@ -90,6 +90,7 @@
         }
     }
 }
+
 .content-slider {
     padding: 16px 0;
 
@@ -135,5 +136,24 @@
         &:hover {
             color: #ffd265;
         }
+    }
+}
+
+.content-footer {
+    margin: 50px auto;
+    width: 310px;
+
+    svg {
+        margin-top: 42.5px;
+        margin-bottom: 48px;
+    }
+
+    img {
+        display: block;
+        margin: 0 auto 25px;
+    }
+
+    .content-footer-lic {
+        margin-top: 18px;
     }
 }

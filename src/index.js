@@ -1,7 +1,6 @@
 import "./scss/styles.scss";
 import Swiper, { Pagination, EffectFade, Autoplay } from "swiper";
 import "swiper/css";
-import "swiper/css/pagination";
 
 Swiper.use([Autoplay, Pagination, EffectFade]);
 
