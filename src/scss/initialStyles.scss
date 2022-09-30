@@ -61,6 +61,9 @@ h2 {
 h1 {
     font-family: "Cheque";
     font-size: 28px;
+    @media screen and (max-width: 1024px) {
+        font-size: 24px;
+    }
 }
 
 h3 {
