@@ -1,5 +1,5 @@
 .content-slider {
-    padding: 16px 0;
+    padding: 48px 0;
 
     .swiper {
         padding-bottom: 27px;
@@ -16,6 +16,9 @@
     .swiper-pagination {
         bottom: -2px !important;
 
+        @media screen and (max-width: 1024px) {
+            bottom: 3px !important;
+        }
         .swiper-pagination-bullet {
             width: 6px;
             height: 6px;
@@ -38,7 +41,7 @@
         margin: 13px auto 32px;
 
         p:first-child {
-            margin-bottom: 1.3rem;
+            margin-bottom: 1.1rem;
         }
 
         @media screen and (max-width: 1440px) {
@@ -46,6 +49,7 @@
         }
         @media screen and (max-width: 1024px) {
             width: 311px;
+            margin-top: 25px;
         }
     }
 

@@ -2,13 +2,13 @@
     display: flex;
     justify-content: center;
     gap: 128px;
-    padding: 26px 0 48px;
+    padding: 58px 0 79px;
 
     @media screen and (max-width: 1024px) {
         display: block;
         width: 312px;
         margin: 0 auto;
-        padding: 32px 0 38px;
+        padding: 64px 0 70px;
     }
 
     .action-element {
@@ -55,7 +55,7 @@
             }
             &.action-element-read {
                 @media screen and (max-width: 1024px) {
-                    width: 200px;
+                    width: 170px;
                     margin: 14px auto 0;
                 }
             }

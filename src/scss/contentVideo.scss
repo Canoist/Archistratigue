@@ -1,19 +1,35 @@
 .content-video {
+    padding-top: 48px;
+
+    @media screen and (max-width: 1024px) {
+        padding-bottom: 72px;
+    }
+
+    p {
+        margin-bottom: 39px;
+        @media screen and (max-width: 1024px) {
+            width: 311px;
+            margin: 0 auto 24px;
+        }
+    }
+
     .content-video-mobile {
         display: none;
 
         @media screen and (max-width: 500px) {
             display: inline-block;
-            margin-bottom: 40px;
         }
     }
 
     .content-video-mobile-horizontal {
         display: none;
 
-        @media screen and (min-width: 500.5px) and (max-width: 1024px) {
+        @media screen and (max-width: 1024px) {
             display: inline-block;
-            margin-bottom: 40px;
+        }
+
+        @media screen and (max-width: 500px) {
+            display: none;
         }
     }
 
@@ -22,15 +38,6 @@
 
         @media screen and (max-width: 1024px) {
             display: none;
-        }
-    }
-
-    p {
-        margin-top: 16px;
-        margin-bottom: 39px;
-        @media screen and (max-width: 1024px) {
-            width: 311px;
-            margin: 16px auto 24px;
         }
     }
 }
