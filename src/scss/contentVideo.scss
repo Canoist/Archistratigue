@@ -1,0 +1,36 @@
+.content-video {
+    .content-video-mobile {
+        display: none;
+
+        @media screen and (max-width: 500px) {
+            display: inline-block;
+            margin-bottom: 40px;
+        }
+    }
+
+    .content-video-mobile-horizontal {
+        display: none;
+
+        @media screen and (min-width: 500.5px) and (max-width: 1024px) {
+            display: inline-block;
+            margin-bottom: 40px;
+        }
+    }
+
+    .content-video-desktop {
+        display: inline-block;
+
+        @media screen and (max-width: 1024px) {
+            display: none;
+        }
+    }
+
+    p {
+        margin-top: 16px;
+        margin-bottom: 39px;
+        @media screen and (max-width: 1024px) {
+            width: 311px;
+            margin: 16px auto 24px;
+        }
+    }
+}
