@@ -19,7 +19,7 @@
         .swiper-pagination-bullet {
             width: 6px;
             height: 6px;
-            margin: 0 2px;
+            margin: 0 2px !important;
             background: #ffffff;
 
             @media screen and (max-width: 1024px) {
@@ -35,10 +35,10 @@
 
     .content-slider-content {
         width: 764px;
-        margin: 32px auto;
+        margin: 13px auto 32px;
 
-        & > p {
-            margin-bottom: 1rem;
+        p:first-child {
+            margin-bottom: 1.3rem;
         }
 
         @media screen and (max-width: 1440px) {
@@ -54,7 +54,7 @@
         font-weight: 700;
         color: $goldText;
         text-transform: uppercase;
-        margin-top: 10px;
+        margin-top: 18px;
         display: inline-block;
 
         &:hover {

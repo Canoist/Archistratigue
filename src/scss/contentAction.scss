@@ -23,6 +23,8 @@
         .btn {
             font-family: "Open Sans", sans-serif;
             font-weight: 700;
+            font-size: 14px;
+            line-height: 19px;
             color: black;
             display: flex;
             flex-direction: row;
@@ -41,9 +43,12 @@
             }
         }
 
-        p {
-            margin: 12px auto 0;
+        &:first-child p {
             width: 270px;
+        }
+        p {
+            margin: 14px auto 0;
+            width: 303px;
 
             @media screen and (max-width: 1024px) {
                 margin-top: 14px;

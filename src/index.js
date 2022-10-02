@@ -16,8 +16,8 @@ const swiper = new Swiper(".swiper", {
         el: ".swiper-pagination",
         clickable: true,
     },
-    autoplay: {
-        disableOnInteraction: false,
-        waitForTransition: false,
-    },
+    // autoplay: {
+    //     disableOnInteraction: false,
+    //     waitForTransition: false,
+    // },
 });
