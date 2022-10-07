@@ -1,0 +1,92 @@
+div#control-container {
+    margin-top: 25px;
+
+    @media all and (-ms-high-contrast: none) {
+        *::-ms-backdrop,
+        div#control-container {
+            margin-top: 40px;
+            float: none;
+        }
+    }
+
+    div#central-control-container {
+        width: 50%;
+        float: left;
+
+        div#central-controls {
+            width: 130px;
+            margin: auto;
+
+            div#previous {
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                cursor: pointer;
+                float: left;
+                margin-top: 10px;
+                margin-right: -5px;
+            }
+
+            div#play-pause {
+                display: inline-block;
+                width: 60px;
+                height: 60px;
+                cursor: pointer;
+                float: left;
+                & #pause {
+                    display: none;
+                }
+            }
+
+            div#next {
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                cursor: pointer;
+                float: left;
+                margin-top: 10px;
+                margin-left: -5px;
+            }
+        }
+    }
+
+    div#volume-container {
+        width: 25%;
+        float: left;
+        padding-top: 20px;
+    }
+
+    margin-top: 20px;
+
+    div.amplitude-mute {
+        cursor: pointer;
+        width: 25px;
+        height: 19px;
+        float: left;
+        & #mute {
+            display: none;
+        }
+    }
+}
+
+div#control-container:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+    div#amplitude-player div#volume-container {
+        div.volume-controls {
+            display: none;
+        }
+    }
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+    div#amplitude-player div#volume-container div.volume-controls {
+        display: none;
+    }
+}
