@@ -11,6 +11,7 @@
 
 .content {
     text-align: center;
+    min-width: 350px;
 
     &:nth-child(1) {
         position: relative;
@@ -23,7 +24,7 @@
             height: 147px;
             right: 0;
             z-index: 5;
-            top: 214px;
+            top: 223px;
             background: url("../../public/assets/ribbon.png") 100% 100%
                 no-repeat;
             @media screen and (max-width: 1024px) {
