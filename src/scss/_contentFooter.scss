@@ -1,0 +1,39 @@
+.content-footer {
+    margin: 0 auto;
+    padding: 50px 0 46px;
+    width: 310px;
+
+    @media screen and (max-width: 1024px) {
+        padding: 38px 0 66px;
+    }
+
+    svg {
+        margin-top: 42.5px;
+        margin-bottom: 48px;
+        @media screen and (max-width: 1024px) {
+            margin-top: 48px;
+        }
+    }
+
+    img {
+        display: block;
+        margin: -4px auto 25px;
+    }
+
+    .content-footer-info {
+        display: inline-block;
+        font-size: 14px;
+        line-height: 18px;
+
+        @media screen and (max-width: 1024px) {
+            font-size: 12px;
+            line-height: 16px;
+
+            width: 220px;
+        }
+
+        .content-footer-lic {
+            margin-top: 1rem;
+        }
+    }
+}

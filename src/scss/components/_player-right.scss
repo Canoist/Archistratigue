@@ -23,15 +23,17 @@ div#amplitude-right {
 
         div.play-button-container {
             display: none;
-            // background: url("../img/list-play-light.png") no-repeat;
+            background: url("../../../public/assets/list-play-light.png")
+                no-repeat;
             width: 22px;
             height: 22px;
             margin-top: 10px;
         }
 
-        // div.play-button-container:hover {
-        // background: url("../img/list-play-hover.png") no-repeat;
-        // }
+        div.play-button-container:hover {
+            background: url("../../../public/assets/list-play-hover.png")
+                no-repeat;
+        }
 
         &.amplitude-active-song-container {
             div.song-now-playing-icon-container {

@@ -16,23 +16,18 @@ div#control-container {
         div#central-controls {
             width: 130px;
             margin: auto;
+            display: flex;
+            align-items: center;
+            gap: 3px;
 
             div#previous {
                 display: inline-block;
-                width: 40px;
-                height: 40px;
                 cursor: pointer;
-                float: left;
-                margin-top: 10px;
-                margin-right: -5px;
             }
 
             div#play-pause {
                 display: inline-block;
-                width: 60px;
-                height: 60px;
                 cursor: pointer;
-                float: left;
                 & #pause {
                     display: none;
                 }
@@ -40,12 +35,7 @@ div#control-container {
 
             div#next {
                 display: inline-block;
-                width: 40px;
-                height: 40px;
                 cursor: pointer;
-                float: left;
-                margin-top: 10px;
-                margin-left: -5px;
             }
         }
     }
