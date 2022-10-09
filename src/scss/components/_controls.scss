@@ -10,14 +10,13 @@ div#control-container {
     }
 
     div#central-control-container {
-        width: 50%;
-        float: left;
+        width: 100%;
 
         div#central-controls {
-            width: 130px;
             margin: auto;
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 3px;
 
             div#previous {

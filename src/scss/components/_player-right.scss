@@ -4,6 +4,7 @@ div#player-right {
     width: 50%;
     display: flex;
     flex-direction: column;
+    height: 427px;
 
     div.song {
         cursor: pointer;
@@ -21,29 +22,10 @@ div#player-right {
             }
         }
 
-        div.play-button-container {
-            display: none;
-            background: url("../../../public/assets/list-play-light.png")
-                no-repeat;
-            width: 22px;
-            height: 22px;
-            margin-top: 10px;
-        }
-
-        div.play-button-container:hover {
-            background: url("../../../public/assets/list-play-hover.png")
-                no-repeat;
-        }
-
         &.player-active-song-container {
             div.song-now-playing-icon-container {
                 img.now-playing {
                     display: block;
-                }
-            }
-            &:hover {
-                div.play-button-container {
-                    display: none;
                 }
             }
         }
