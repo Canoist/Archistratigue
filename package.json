@@ -26,6 +26,7 @@
         "webpack-dev-server": "^4.11.1"
     },
     "dependencies": {
+        "date-fns": "^2.29.3",
         "howler": "^2.2.3",
         "swiper": "^8.4.2"
     }

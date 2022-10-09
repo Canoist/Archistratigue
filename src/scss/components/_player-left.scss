@@ -1,4 +1,4 @@
-div#amplitude-left {
+div#player-left {
     padding: 0px;
     border-right: 1px solid #cfd8dc;
     width: 50%;
@@ -24,11 +24,11 @@ div#amplitude-left {
 
 /* Small only */
 @media screen and (max-width: 39.9375em) {
-    div#amplitude-player {
-        div#amplitude-left {
+    div#player {
+        div#player-left {
             width: 100%;
 
-            img[amplitude-song-info="cover_art_url"] {
+            img[player-song-info="cover_art_url"] {
                 width: auto;
                 height: auto;
             }

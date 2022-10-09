@@ -48,7 +48,7 @@ div#control-container {
 
     margin-top: 20px;
 
-    div.amplitude-mute {
+    div.player-mute {
         cursor: pointer;
         width: 25px;
         height: 19px;
@@ -67,7 +67,7 @@ div#control-container:after {
 
 /* Small only */
 @media screen and (max-width: 39.9375em) {
-    div#amplitude-player div#volume-container {
+    div#player div#volume-container {
         div.volume-controls {
             display: none;
         }
@@ -76,7 +76,7 @@ div#control-container:after {
 
 /* Medium only */
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
-    div#amplitude-player div#volume-container div.volume-controls {
+    div#player div#volume-container div.volume-controls {
         display: none;
     }
 }

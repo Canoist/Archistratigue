@@ -249,39 +249,37 @@
         </div>
         <div>
             <!-- AUDIO -->
-            <div id="amplitude-player">
+            <div id="player">
                 <!-- Left Side Player -->
-                <div id="amplitude-left">
+                <div id="player-left">
                     <div id="player-left-bottom">
                         <div id="time-container">
                             <span class="current-time">
-                                <span class="amplitude-current-minutes"></span
-                                >:<span
-                                    class="amplitude-current-seconds"></span>
+                                <span class="player-current-minutes"></span
+                                >:<span class="player-current-seconds"></span>
                             </span>
                             <div id="progress-container">
                                 <input
                                     type="range"
-                                    class="amplitude-song-slider" />
+                                    class="player-song-slider" />
                                 <progress
                                     id="song-played-progress"
-                                    class="amplitude-song-played-progress"></progress>
+                                    class="player-song-played-progress"></progress>
                                 <progress
                                     id="song-buffered-progress"
-                                    class="amplitude-buffered-progress"
+                                    class="player-buffered-progress"
                                     value="0"></progress>
                             </div>
                             <span class="duration">
-                                <span class="amplitude-duration-minutes"></span
-                                >:<span
-                                    class="amplitude-duration-seconds"></span>
+                                <span class="player-duration-minutes"></span
+                                >:<span class="player-duration-seconds"></span>
                             </span>
                         </div>
                         <!-- Audio Control -->
                         <div id="control-container">
                             <div id="central-control-container">
                                 <div id="central-controls">
-                                    <div class="amplitude-prev" id="previous">
+                                    <div class="player-prev" id="previous">
                                         <svg
                                             width="30px"
                                             height="30px"
@@ -301,7 +299,7 @@
                                         </svg>
                                     </div>
                                     <div
-                                        class="amplitude-play-pause"
+                                        class="player-play-pause"
                                         id="play-pause">
                                         <svg
                                             id="play"
@@ -341,7 +339,7 @@
                                                 fill="#FFFFFF"></path>
                                         </svg>
                                     </div>
-                                    <div class="amplitude-next" id="next">
+                                    <div class="player-next" id="next">
                                         <svg
                                             width="30px"
                                             height="30px"
@@ -365,7 +363,7 @@
 
                             <div id="volume-container">
                                 <div class="volume-controls">
-                                    <div class="amplitude-mute">
+                                    <div class="player-mute">
                                         <svg
                                             id="volume"
                                             width="25px"
@@ -398,7 +396,7 @@
                                     </div>
                                     <input
                                         type="range"
-                                        class="amplitude-volume-slider" />
+                                        class="player-volume-slider" />
                                 </div>
                             </div>
                         </div>
@@ -406,12 +404,12 @@
                         <!-- Meta data -->
                         <div id="meta-container">
                             <span
-                                data-amplitude-song-info="name"
+                                data-song-info="name"
                                 class="song-name"></span>
 
                             <div class="song-artist-album">
-                                <span data-amplitude-song-info="artist"></span>
-                                <span data-amplitude-song-info="album"></span>
+                                <span data-song-info="artist"></span>
+                                <span data-song-info="album"></span>
                             </div>
                         </div>
                         <!-- End of Meta data -->
@@ -419,10 +417,8 @@
                 </div>
                 <!-- End Left Side Player -->
                 <!-- Right Side Player -->
-                <div id="amplitude-right">
-                    <div
-                        class="song amplitude-song-container amplitude-play-pause"
-                        data-amplitude-song-index="0">
+                <div id="player-right">
+                    <div class="song player-song-container player-play-pause">
                         <div class="song-now-playing-icon-container">
                             <div class="play-button-container"></div>
                         </div>
@@ -432,9 +428,7 @@
                         </div>
                         <span class="song-duration">3:30</span>
                     </div>
-                    <div
-                        class="song amplitude-song-container amplitude-play-pause"
-                        data-amplitude-song-index="1">
+                    <div class="song player-song-container player-play-pause">
                         <div class="song-now-playing-icon-container">
                             <div class="play-button-container"></div>
                         </div>
@@ -444,9 +438,7 @@
                         </div>
                         <span class="song-duration">3:16</span>
                     </div>
-                    <div
-                        class="song amplitude-song-container amplitude-play-pause"
-                        data-amplitude-song-index="2">
+                    <div class="song player-song-container player-play-pause">
                         <div class="song-now-playing-icon-container">
                             <div class="play-button-container"></div>
                         </div>
@@ -456,9 +448,7 @@
                         </div>
                         <span class="song-duration">3:32</span>
                     </div>
-                    <div
-                        class="song amplitude-song-container amplitude-play-pause"
-                        data-amplitude-song-index="3">
+                    <div class="song player-song-container player-play-pause">
                         <div class="song-now-playing-icon-container">
                             <div class="play-button-container"></div>
                         </div>
@@ -468,9 +458,7 @@
                         </div>
                         <span class="song-duration">3:30</span>
                     </div>
-                    <div
-                        class="song amplitude-song-container amplitude-play-pause"
-                        data-amplitude-song-index="4">
+                    <div class="song player-song-container player-play-pause">
                         <div class="song-now-playing-icon-container">
                             <div class="play-button-container"></div>
                         </div>
@@ -480,9 +468,7 @@
                         </div>
                         <span class="song-duration">5:12</span>
                     </div>
-                    <div
-                        class="song amplitude-song-container amplitude-play-pause"
-                        data-amplitude-song-index="5">
+                    <div class="song player-song-container player-play-pause">
                         <div class="song-now-playing-icon-container">
                             <div class="play-button-container"></div>
                         </div>
@@ -494,9 +480,7 @@
                         </div>
                         <span class="song-duration">5:29</span>
                     </div>
-                    <div
-                        class="song amplitude-song-container amplitude-play-pause"
-                        data-amplitude-song-index="6">
+                    <div class="song player-song-container player-play-pause">
                         <div class="song-now-playing-icon-container">
                             <div class="play-button-container"></div>
                         </div>
@@ -506,9 +490,7 @@
                         </div>
                         <span class="song-duration">5:29</span>
                     </div>
-                    <div
-                        class="song amplitude-song-container amplitude-play-pause"
-                        data-amplitude-song-index="7">
+                    <div class="song player-song-container player-play-pause">
                         <div class="song-now-playing-icon-container">
                             <div class="play-button-container"></div>
                         </div>
@@ -520,9 +502,7 @@
                         </div>
                         <span class="song-duration">2:39</span>
                     </div>
-                    <div
-                        class="song amplitude-song-container amplitude-play-pause"
-                        data-amplitude-song-index="8">
+                    <div class="song player-song-container player-play-pause">
                         <div class="song-now-playing-icon-container">
                             <div class="play-button-container"></div>
                         </div>
@@ -534,9 +514,7 @@
                         </div>
                         <span class="song-duration">1:00</span>
                     </div>
-                    <div
-                        class="song amplitude-song-container amplitude-play-pause"
-                        data-amplitude-song-index="9">
+                    <div class="song player-song-container player-play-pause">
                         <div class="song-now-playing-icon-container">
                             <div class="play-button-container"></div>
                         </div>
@@ -546,9 +524,7 @@
                         </div>
                         <span class="song-duration">5:25</span>
                     </div>
-                    <div
-                        class="song amplitude-song-container amplitude-play-pause"
-                        data-amplitude-song-index="10">
+                    <div class="song player-song-container player-play-pause">
                         <div class="song-now-playing-icon-container">
                             <div class="play-button-container"></div>
                         </div>
@@ -558,9 +534,7 @@
                         </div>
                         <span class="song-duration">5:40</span>
                     </div>
-                    <div
-                        class="song amplitude-song-container amplitude-play-pause"
-                        data-amplitude-song-index="10">
+                    <div class="song player-song-container player-play-pause">
                         <div class="song-now-playing-icon-container">
                             <div class="play-button-container"></div>
                         </div>
@@ -570,9 +544,7 @@
                         </div>
                         <span class="song-duration">5:40</span>
                     </div>
-                    <div
-                        class="song amplitude-song-container amplitude-play-pause"
-                        data-amplitude-song-index="10">
+                    <div class="song player-song-container player-play-pause">
                         <div class="song-now-playing-icon-container">
                             <div class="play-button-container"></div>
                         </div>
@@ -582,9 +554,7 @@
                         </div>
                         <span class="song-duration">5:40</span>
                     </div>
-                    <div
-                        class="song amplitude-song-container amplitude-play-pause"
-                        data-amplitude-song-index="10">
+                    <div class="song player-song-container player-play-pause">
                         <div class="song-now-playing-icon-container">
                             <div class="play-button-container"></div>
                         </div>

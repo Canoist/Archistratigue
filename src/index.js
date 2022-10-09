@@ -37,17 +37,38 @@ const swiper = new Swiper(".swiper", {
     },
 });
 
+const timeContainer = document.querySelector(".time-container");
+
 const songElements = document.getElementsByClassName("song");
 
-const sound_1 = new Howl({
-    src: sound1,
-});
+const sounds = [
+    sound1,
+    sound2,
+    sound3,
+    sound4,
+    sound5,
+    sound6,
+    sound7,
+    sound8,
+    sound9,
+    sound10,
+    sound11,
+    sound12,
+    sound13,
+    soundSummary,
+];
 
 for (let i = 0; i < songElements.length; i++) {
     songElements[i].addEventListener("click", function () {
         this.querySelectorAll(".play-button-container")[0].style.display =
             "none";
         Howler.stop();
-        sound_1.play();
+        const sound = new Howl({
+            src: sounds[i],
+            onload: () => {
+                timeContainer.querySelector(".duration");
+            },
+        });
+        sound.play();
     });
 }
