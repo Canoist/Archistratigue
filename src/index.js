@@ -6,6 +6,7 @@ import "swiper/css";
 import sounds from "./sounds";
 import setDuration from "./setDuration";
 import setMetaData from "./setMetaData";
+import setCurrentTime from "./setCurrentTime";
 
 Swiper.use([Autoplay, Pagination, EffectFade]);
 
@@ -30,7 +31,7 @@ const swiper = new Swiper(".swiper", {
 const playerLeft = document.querySelector("#player-left");
 const songElements = document.getElementsByClassName("song");
 
-const sound = new Howl({
+let sound = new Howl({
     src: sounds[0].src,
     html5: true,
     onload: () => {
@@ -39,7 +40,7 @@ const sound = new Howl({
             start: 0,
             end: totalDurationInSec * 1000,
         });
-
+        setCurrentTime();
         setDuration(formattedDuration);
         setMetaData();
     },
@@ -48,7 +49,7 @@ const sound = new Howl({
 for (let i = 0; i < songElements.length; i++) {
     songElements[i].addEventListener("click", function () {
         Howler.stop();
-        const sound = new Howl({
+        sound = new Howl({
             src: sounds[i].src,
             html5: true,
             onload: () => {
@@ -62,5 +63,12 @@ for (let i = 0; i < songElements.length; i++) {
             },
         });
         sound.play();
+        setInterval(function tick() {
+            const formattedDuration = intervalToDuration({
+                start: 0,
+                end: sound.seek() * 1000,
+            });
+            setCurrentTime(formattedDuration);
+        }, 1000);
     });
 }
