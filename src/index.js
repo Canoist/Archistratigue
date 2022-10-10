@@ -35,46 +35,39 @@ const controlButton = document.querySelector(".player-play-pause");
 const prevButton = document.querySelector("#previous");
 const playButton = document.querySelector("#play");
 const nextButton = document.querySelector("#next");
+const songProgress = document.querySelector(".player-song-played-progress");
+songProgress.style.width = "0%";
 
-let index = 0;
-let sound = new Howl({
-    src: sounds[index].src,
-    html5: true,
-    onload: () => {
-        const totalDurationInSec = sound.duration();
-        const formattedDuration = intervalToDuration({
-            start: 0,
-            end: totalDurationInSec * 1000,
-        });
-        setCurrentTime();
-        setDuration(formattedDuration);
-        setMetaData();
-    },
-});
+let index = null;
+let sound = null;
 
 for (let i = 0; i < songElements.length; i++) {
     songElements[i].addEventListener("click", function () {
-        if (playButton.classList.contains("player-play-pause-active")) {
+        if (index === i) {
+            if (sound.playing()) {
+                sound.pause();
+            } else {
+                sound.play();
+            }
             toggleButton();
+        } else {
+            if (playButton.classList.contains("player-play-pause-active")) {
+                toggleButton();
+            }
+
+            Howler.stop();
+            index = i;
+            sound = generateSound(index);
+            sound.play();
         }
-
-        Howler.stop();
-
-        index = i;
-        sound = generateSound(index);
-        sound.play();
-
-        setInterval(function tick() {
-            const formattedDuration = intervalToDuration({
-                start: 0,
-                end: sound.seek() * 1000,
-            });
-            setCurrentTime(formattedDuration);
-        }, 1000);
     });
 }
 
 controlButton.addEventListener("click", () => {
+    if (!sound) {
+        index = 0;
+        sound = generateSound(index);
+    }
     toggleButton();
     if (playButton.classList.contains("player-play-pause-active")) {
         sound.pause();

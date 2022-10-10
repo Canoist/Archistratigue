@@ -10,6 +10,7 @@ div#meta-container {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        user-select: none;
     }
     div.song-artist-album {
         color: #607d8b;
