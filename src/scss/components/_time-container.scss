@@ -17,9 +17,3 @@ div#time-container {
         text-align: center;
     }
 }
-
-div#time-container:after {
-    content: "";
-    display: table;
-    clear: both;
-}

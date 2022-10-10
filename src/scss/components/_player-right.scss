@@ -15,19 +15,6 @@ div#player-right {
             width: 20px;
             height: 20px;
             margin-right: 10px;
-
-            img.now-playing {
-                display: none;
-                margin-top: 15px;
-            }
-        }
-
-        &.player-active-song-container {
-            div.song-now-playing-icon-container {
-                img.now-playing {
-                    display: block;
-                }
-            }
         }
 
         div.song-meta-data {
@@ -54,17 +41,6 @@ div#player-right {
                 text-overflow: ellipsis;
             }
         }
-
-        img.bandcamp-grey {
-            float: left;
-            display: block;
-            margin-top: 10px;
-        }
-        img.bandcamp-white {
-            float: left;
-            display: none;
-            margin-top: 10px;
-        }
         span.song-duration {
             float: left;
             width: 55px;
@@ -74,12 +50,6 @@ div#player-right {
             font-size: 16px;
             font-weight: 500;
         }
-    }
-
-    div.song:after {
-        content: "";
-        display: table;
-        clear: both;
     }
 }
 

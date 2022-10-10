@@ -72,39 +72,6 @@
             <div class="content-action">
                 <div class="action-element">
                     <a
-                        href="https://drive.google.com/drive/folders/1vWebVewljY-3VGb_BYUD50pAhsHqpAMF?usp=sharing
-                    "
-                        title="Слушать аудиокнигу"
-                        target="_blank">
-                        <span class="btn">
-                            <svg
-                                width="21"
-                                height="20"
-                                viewBox="0 0 21 20"
-                                fill="black"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_3_559)">
-                                    <path
-                                        d="M20.1842 11.9315C20.6053 12.1842 20.6053 12.8158 20.1842 13.0685L15.4474 15.9111C15.0263 16.1637 14.5 15.8479 14.5 15.3426V9.65744C14.5 9.1521 15.0263 8.83626 15.4474 9.08893L20.1842 11.9315Z" />
-                                    <path
-                                        d="M2.5 5.25C2.5 4.83579 2.83579 4.5 3.25 4.5H17.75C18.1642 4.5 18.5 4.83579 18.5 5.25C18.5 5.66421 18.1642 6 17.75 6H3.25C2.83579 6 2.5 5.66421 2.5 5.25Z" />
-                                    <path
-                                        d="M2.5 10.25C2.5 9.83579 2.83579 9.5 3.25 9.5H10.75C11.1642 9.5 11.5 9.83579 11.5 10.25C11.5 10.6642 11.1642 11 10.75 11H3.25C2.83579 11 2.5 10.6642 2.5 10.25Z" />
-                                    <path
-                                        d="M2.5 15.25C2.5 14.8358 2.83579 14.5 3.25 14.5H10.75C11.1642 14.5 11.5 14.8358 11.5 15.25C11.5 15.6642 11.1642 16 10.75 16H3.25C2.83579 16 2.5 15.6642 2.5 15.25Z" />
-                                </g>
-                            </svg>
-                            Слушать аудиокнигу
-                        </span>
-                    </a>
-                    <p>
-                        На&nbsp;данный момент в&nbsp;открытый доступ выложена
-                        вся практическая часть книги. Первая,
-                        историческая,&nbsp;&mdash; на&nbsp;подходе.
-                    </p>
-                </div>
-                <div class="action-element">
-                    <a
                         href="./assets/Put_arkhistratiga_preodolenie_zverya_-_Vasilenkov_D__Vasilik_V.pdf"
                         download
                         title="Читать"
@@ -131,6 +98,250 @@
                 </div>
             </div>
         </div>
+        <!-- AUDIO -->
+        <div id="player">
+            <!-- Left Side Player -->
+            <div id="player-left">
+                <div id="player-left-bottom">
+                    <div id="time-container">
+                        <span class="current-time">00:00 </span>
+                        <div id="progress-container">
+                            <input
+                                type="range"
+                                class="player-song-slider"
+                                value="0"
+                                step="0.2" />
+                            <progress
+                                id="song-played-progress"
+                                class="player-song-played-progress"></progress>
+                            <progress
+                                id="song-buffered-progress"
+                                class="player-buffered-progress"
+                                value="0"></progress>
+                        </div>
+                        <span class="player-duration">09:24</span>
+                    </div>
+                    <!-- Audio Control -->
+                    <div id="control-container">
+                        <div id="central-control-container">
+                            <div id="central-controls">
+                                <div class="player-prev" id="previous">
+                                    <svg
+                                        width="30px"
+                                        height="30px"
+                                        viewBox="0 0 39 39"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <ellipse
+                                            id="Oval-1"
+                                            fill="#00A0FF"
+                                            cx="19.5"
+                                            cy="19.5"
+                                            rx="19.5"
+                                            ry="19.5"></ellipse>
+                                        <path
+                                            d="M16.1305538,18.2541918 L16.1305538,12.3004631 C16.1305538,11.5809953 15.5536833,11 14.8406971,11 L12.2892675,11 C11.5768706,11 11,11.5809953 11,12.3004631 L11,26.1995678 C11,26.9208033 11.5768706,27.4988524 12.2892675,27.4988524 L14.8406971,27.4988524 C15.555451,27.4988524 16.1305538,26.9208033 16.1305538,26.1995678 L16.1305538,20.245839 L27.432857,27.2478341 C28.2913865,27.8093843 28.9919985,27.3986808 28.9919985,26.3274339 L28.9919985,12.1720078 C28.993177,11.1037071 28.2913865,10.6888788 27.432857,11.2521967 L16.1305538,18.2541918 Z"
+                                            id="Shape"
+                                            fill="#FFFFFF"></path>
+                                    </svg>
+                                </div>
+                                <div class="player-play-pause" id="play-pause">
+                                    <svg
+                                        id="play"
+                                        class="player-play-pause-active"
+                                        width="40px"
+                                        height="40px"
+                                        viewBox="0 0 60 60"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <circle
+                                            fill="#00A0FF"
+                                            cx="30"
+                                            cy="30"
+                                            r="30"></circle>
+                                        <path
+                                            d="M43.625,29.8025209 L23.646,17.4255209 C22.189,16.4735209 21,17.1725209 21,18.9875209 L21,43.0105209 C21,44.8225209 22.188,45.5285209 23.646,44.5725209 L43.625,32.1975209 C43.625,32.1975209 44.336,31.6975209 44.336,31.0005209 C44.336,30.3015209 43.625,29.8025209 43.625,29.8025209 L43.625,29.8025209 Z"
+                                            id="Play"
+                                            fill="#FFFFFF"></path>
+                                    </svg>
+
+                                    <svg
+                                        id="pause"
+                                        width="40px"
+                                        height="40px"
+                                        viewBox="0 0 60 60"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <circle
+                                            fill="#00A0FF"
+                                            cx="30"
+                                            cy="30"
+                                            r="30"></circle>
+                                        <path
+                                            d="M40.587,16.61 L36.257,16.61 C35.048,16.61 34.069,17.59 34.069,18.811 L34.069,42.403 C34.069,43.624 35.048,44.61 36.257,44.61 L40.587,44.61 C41.8,44.61 42.775,43.624 42.775,42.403 L42.775,18.811 C42.783,17.595 41.8,16.61 40.587,16.61 L40.587,16.61 Z"
+                                            id="Shape"
+                                            fill="#FFFFFF"></path>
+                                        <path
+                                            d="M24.2,16.61 L19.872,16.61 C18.661,16.61 17.679,17.59 17.679,18.811 L17.679,42.403 C17.679,43.624 18.661,44.61 19.872,44.61 L24.2,44.61 C25.411,44.61 26.388,43.624 26.388,42.403 L26.388,18.811 C26.388,17.595 25.411,16.61 24.2,16.61 L24.2,16.61 Z"
+                                            id="Shape"
+                                            fill="#FFFFFF"></path>
+                                    </svg>
+                                </div>
+                                <div class="player-next" id="next">
+                                    <svg
+                                        width="30px"
+                                        height="30px"
+                                        viewBox="0 0 39 39"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <ellipse
+                                            id="Oval-1-Copy"
+                                            fill="#00A0FF"
+                                            cx="19.5"
+                                            cy="19.5"
+                                            rx="19.5"
+                                            ry="19.5"></ellipse>
+                                        <path
+                                            d="M27.6768636,11 L25.1308315,11 C24.4160835,11 23.8436969,11.5800341 23.8436969,12.2983117 L23.8436969,18.2421908 L12.5565622,11.250603 C11.6994529,10.6911583 11,11.1011824 11,12.1694806 L11,26.3003121 C11,27.3662571 11.6988647,27.7815757 12.5565622,27.2191897 L23.8436969,20.2293666 L23.8436969,26.1732458 C23.8436969,26.8932881 24.4196132,27.4703809 25.1308315,27.4703809 L27.6768636,27.4703809 C28.390435,27.4703809 28.9639982,26.8932881 28.9639982,26.1732458 L28.9639982,12.2983117 C28.9651747,11.5817989 28.3892585,11 27.6768636,11 L27.6768636,11 Z"
+                                            id="Shape"
+                                            fill="#FFFFFF"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of Audio Control -->
+                    <!-- Meta data -->
+                    <div id="meta-container">
+                        <span class="song-name"></span>
+                        <span class="song-artist-album"></span>
+                    </div>
+                    <!-- End of Meta data -->
+                </div>
+            </div>
+            <!-- End Left Side Player -->
+            <!-- Right Side Player -->
+            <div id="player-right">
+                <div class="song player-song-container player-play-pause">
+                    <div class="song-now-playing-icon-container"></div>
+                    <div class="song-meta-data">
+                        <span class="song-title">Глава 1</span>
+                        <span class="song-artist">Испытание войной</span>
+                    </div>
+                    <span class="song-duration">09:24</span>
+                </div>
+                <div class="song player-song-container player-play-pause">
+                    <div class="song-now-playing-icon-container"></div>
+                    <div class="song-meta-data">
+                        <span class="song-title">Глава 2</span>
+                        <span class="song-artist">Меч обоюдоострый</span>
+                    </div>
+                    <span class="song-duration">19:21</span>
+                </div>
+                <div class="song player-song-container player-play-pause">
+                    <div class="song-now-playing-icon-container"></div>
+                    <div class="song-meta-data">
+                        <span class="song-title">Глава 3</span>
+                        <span class="song-artist">Сквозь страх</span>
+                    </div>
+                    <span class="song-duration">10:31</span>
+                </div>
+                <div class="song player-song-container player-play-pause">
+                    <div class="song-now-playing-icon-container"></div>
+                    <div class="song-meta-data">
+                        <span class="song-title">Глава 4</span>
+                        <span class="song-artist">Молитва</span>
+                    </div>
+                    <span class="song-duration">09:55</span>
+                </div>
+                <div class="song player-song-container player-play-pause">
+                    <div class="song-now-playing-icon-container"></div>
+                    <div class="song-meta-data">
+                        <span class="song-title">Глава 5</span>
+                        <span class="song-artist"
+                            >Грех ведет к&nbsp;смерти</span
+                        >
+                    </div>
+                    <span class="song-duration">07:21</span>
+                </div>
+                <div class="song player-song-container player-play-pause">
+                    <div class="song-now-playing-icon-container"></div>
+                    <div class="song-meta-data">
+                        <span class="song-title">Глава 6</span>
+                        <span class="song-artist"
+                            >Корень греха&nbsp;&mdash; страсть</span
+                        >
+                    </div>
+                    <span class="song-duration">29:46</span>
+                </div>
+                <div class="song player-song-container player-play-pause">
+                    <div class="song-now-playing-icon-container"></div>
+                    <div class="song-meta-data">
+                        <span class="song-title">Глава 7</span>
+                        <span class="song-artist">Грязные помыслы</span>
+                    </div>
+                    <span class="song-duration">12:15</span>
+                </div>
+                <div class="song player-song-container player-play-pause">
+                    <div class="song-now-playing-icon-container"></div>
+                    <div class="song-meta-data">
+                        <span class="song-title">Глава 8</span>
+                        <span class="song-artist"
+                            >Сильные духом любят добро</span
+                        >
+                    </div>
+                    <span class="song-duration">10:10</span>
+                </div>
+                <div class="song player-song-container player-play-pause">
+                    <div class="song-now-playing-icon-container"></div>
+                    <div class="song-meta-data">
+                        <span class="song-title">Глава 9</span>
+                        <span class="song-artist"
+                            >С&nbsp;Богом и&nbsp;слабый сильнее льва</span
+                        >
+                    </div>
+                    <span class="song-duration">06:15</span>
+                </div>
+                <div class="song player-song-container player-play-pause">
+                    <div class="song-now-playing-icon-container"></div>
+                    <div class="song-meta-data">
+                        <span class="song-title">Глава 10</span>
+                        <span class="song-artist">Плен</span>
+                    </div>
+                    <span class="song-duration">14:11</span>
+                </div>
+                <div class="song player-song-container player-play-pause">
+                    <div class="song-now-playing-icon-container"></div>
+                    <div class="song-meta-data">
+                        <span class="song-title">Глава 11</span>
+                        <span class="song-artist">Шрамы души</span>
+                    </div>
+                    <span class="song-duration">24:08</span>
+                </div>
+                <div class="song player-song-container player-play-pause">
+                    <div class="song-now-playing-icon-container"></div>
+                    <div class="song-meta-data">
+                        <span class="song-title">Глава 12</span>
+                        <span class="song-artist">Путь лжи</span>
+                    </div>
+                    <span class="song-duration">16:41</span>
+                </div>
+                <div class="song player-song-container player-play-pause">
+                    <div class="song-now-playing-icon-container"></div>
+                    <div class="song-meta-data">
+                        <span class="song-title">Глава 13</span>
+                        <span class="song-artist">Офицерский крест</span>
+                    </div>
+                    <span class="song-duration">08:14</span>
+                </div>
+                <div class="song player-song-container player-play-pause">
+                    <div class="song-now-playing-icon-container"></div>
+                    <div class="song-meta-data">
+                        <span class="song-title">Заключение</span>
+                    </div>
+                    <span class="song-duration">12:11</span>
+                </div>
+            </div>
+            <!-- End Right Side Player -->
+        </div>
+        <!-- End of AUDIO -->
+        <div></div>
         <div class="content">
             <div class="content-slider">
                 <div class="swiper">
@@ -246,252 +457,6 @@
                     </p>
                 </div>
             </div>
-        </div>
-        <div>
-            <!-- AUDIO -->
-            <div id="player">
-                <!-- Left Side Player -->
-                <div id="player-left">
-                    <div id="player-left-bottom">
-                        <div id="time-container">
-                            <span class="current-time">00:00 </span>
-                            <div id="progress-container">
-                                <input
-                                    type="range"
-                                    class="player-song-slider"
-                                    value="0"
-                                    step="0.2" />
-                                <progress
-                                    id="song-played-progress"
-                                    class="player-song-played-progress"></progress>
-                                <progress
-                                    id="song-buffered-progress"
-                                    class="player-buffered-progress"
-                                    value="0"></progress>
-                            </div>
-                            <span class="player-duration">09:24</span>
-                        </div>
-                        <!-- Audio Control -->
-                        <div id="control-container">
-                            <div id="central-control-container">
-                                <div id="central-controls">
-                                    <div class="player-prev" id="previous">
-                                        <svg
-                                            width="30px"
-                                            height="30px"
-                                            viewBox="0 0 39 39"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <ellipse
-                                                id="Oval-1"
-                                                fill="#00A0FF"
-                                                cx="19.5"
-                                                cy="19.5"
-                                                rx="19.5"
-                                                ry="19.5"></ellipse>
-                                            <path
-                                                d="M16.1305538,18.2541918 L16.1305538,12.3004631 C16.1305538,11.5809953 15.5536833,11 14.8406971,11 L12.2892675,11 C11.5768706,11 11,11.5809953 11,12.3004631 L11,26.1995678 C11,26.9208033 11.5768706,27.4988524 12.2892675,27.4988524 L14.8406971,27.4988524 C15.555451,27.4988524 16.1305538,26.9208033 16.1305538,26.1995678 L16.1305538,20.245839 L27.432857,27.2478341 C28.2913865,27.8093843 28.9919985,27.3986808 28.9919985,26.3274339 L28.9919985,12.1720078 C28.993177,11.1037071 28.2913865,10.6888788 27.432857,11.2521967 L16.1305538,18.2541918 Z"
-                                                id="Shape"
-                                                fill="#FFFFFF"></path>
-                                        </svg>
-                                    </div>
-                                    <div
-                                        class="player-play-pause"
-                                        id="play-pause">
-                                        <svg
-                                            id="play"
-                                            class="player-play-pause-active"
-                                            width="40px"
-                                            height="40px"
-                                            viewBox="0 0 60 60"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <circle
-                                                fill="#00A0FF"
-                                                cx="30"
-                                                cy="30"
-                                                r="30"></circle>
-                                            <path
-                                                d="M43.625,29.8025209 L23.646,17.4255209 C22.189,16.4735209 21,17.1725209 21,18.9875209 L21,43.0105209 C21,44.8225209 22.188,45.5285209 23.646,44.5725209 L43.625,32.1975209 C43.625,32.1975209 44.336,31.6975209 44.336,31.0005209 C44.336,30.3015209 43.625,29.8025209 43.625,29.8025209 L43.625,29.8025209 Z"
-                                                id="Play"
-                                                fill="#FFFFFF"></path>
-                                        </svg>
-
-                                        <svg
-                                            id="pause"
-                                            width="40px"
-                                            height="40px"
-                                            viewBox="0 0 60 60"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <circle
-                                                fill="#00A0FF"
-                                                cx="30"
-                                                cy="30"
-                                                r="30"></circle>
-                                            <path
-                                                d="M40.587,16.61 L36.257,16.61 C35.048,16.61 34.069,17.59 34.069,18.811 L34.069,42.403 C34.069,43.624 35.048,44.61 36.257,44.61 L40.587,44.61 C41.8,44.61 42.775,43.624 42.775,42.403 L42.775,18.811 C42.783,17.595 41.8,16.61 40.587,16.61 L40.587,16.61 Z"
-                                                id="Shape"
-                                                fill="#FFFFFF"></path>
-                                            <path
-                                                d="M24.2,16.61 L19.872,16.61 C18.661,16.61 17.679,17.59 17.679,18.811 L17.679,42.403 C17.679,43.624 18.661,44.61 19.872,44.61 L24.2,44.61 C25.411,44.61 26.388,43.624 26.388,42.403 L26.388,18.811 C26.388,17.595 25.411,16.61 24.2,16.61 L24.2,16.61 Z"
-                                                id="Shape"
-                                                fill="#FFFFFF"></path>
-                                        </svg>
-                                    </div>
-                                    <div class="player-next" id="next">
-                                        <svg
-                                            width="30px"
-                                            height="30px"
-                                            viewBox="0 0 39 39"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <ellipse
-                                                id="Oval-1-Copy"
-                                                fill="#00A0FF"
-                                                cx="19.5"
-                                                cy="19.5"
-                                                rx="19.5"
-                                                ry="19.5"></ellipse>
-                                            <path
-                                                d="M27.6768636,11 L25.1308315,11 C24.4160835,11 23.8436969,11.5800341 23.8436969,12.2983117 L23.8436969,18.2421908 L12.5565622,11.250603 C11.6994529,10.6911583 11,11.1011824 11,12.1694806 L11,26.3003121 C11,27.3662571 11.6988647,27.7815757 12.5565622,27.2191897 L23.8436969,20.2293666 L23.8436969,26.1732458 C23.8436969,26.8932881 24.4196132,27.4703809 25.1308315,27.4703809 L27.6768636,27.4703809 C28.390435,27.4703809 28.9639982,26.8932881 28.9639982,26.1732458 L28.9639982,12.2983117 C28.9651747,11.5817989 28.3892585,11 27.6768636,11 L27.6768636,11 Z"
-                                                id="Shape"
-                                                fill="#FFFFFF"></path>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End of Audio Control -->
-                        <!-- Meta data -->
-                        <div id="meta-container">
-                            <span class="song-name"></span>
-                            <span class="song-artist-album"> </span>
-                        </div>
-                        <!-- End of Meta data -->
-                    </div>
-                </div>
-                <!-- End Left Side Player -->
-                <!-- Right Side Player -->
-                <div id="player-right">
-                    <div class="song player-song-container player-play-pause">
-                        <div class="song-now-playing-icon-container"></div>
-                        <div class="song-meta-data">
-                            <span class="song-title">Глава 1</span>
-                            <span class="song-artist">Испытание войной</span>
-                        </div>
-                        <span class="song-duration">09:24</span>
-                    </div>
-                    <div class="song player-song-container player-play-pause">
-                        <div class="song-now-playing-icon-container"></div>
-                        <div class="song-meta-data">
-                            <span class="song-title">Глава 2</span>
-                            <span class="song-artist">Меч обоюдоострый</span>
-                        </div>
-                        <span class="song-duration">19:21</span>
-                    </div>
-                    <div class="song player-song-container player-play-pause">
-                        <div class="song-now-playing-icon-container"></div>
-                        <div class="song-meta-data">
-                            <span class="song-title">Глава 3</span>
-                            <span class="song-artist">Сквозь страх</span>
-                        </div>
-                        <span class="song-duration">10:31</span>
-                    </div>
-                    <div class="song player-song-container player-play-pause">
-                        <div class="song-now-playing-icon-container"></div>
-                        <div class="song-meta-data">
-                            <span class="song-title">Глава 4</span>
-                            <span class="song-artist">Молитва</span>
-                        </div>
-                        <span class="song-duration">09:55</span>
-                    </div>
-                    <div class="song player-song-container player-play-pause">
-                        <div class="song-now-playing-icon-container"></div>
-                        <div class="song-meta-data">
-                            <span class="song-title">Глава 5</span>
-                            <span class="song-artist">Грех ведет к смерти</span>
-                        </div>
-                        <span class="song-duration">07:21</span>
-                    </div>
-                    <div class="song player-song-container player-play-pause">
-                        <div class="song-now-playing-icon-container"></div>
-                        <div class="song-meta-data">
-                            <span class="song-title">Глава 6</span>
-                            <span class="song-artist"
-                                >Корень греха - страсть</span
-                            >
-                        </div>
-                        <span class="song-duration">29:46</span>
-                    </div>
-                    <div class="song player-song-container player-play-pause">
-                        <div class="song-now-playing-icon-container"></div>
-                        <div class="song-meta-data">
-                            <span class="song-title">Глава 7</span>
-                            <span class="song-artist">Грязные помыслы</span>
-                        </div>
-                        <span class="song-duration">12:15</span>
-                    </div>
-                    <div class="song player-song-container player-play-pause">
-                        <div class="song-now-playing-icon-container"></div>
-                        <div class="song-meta-data">
-                            <span class="song-title">Глава 8</span>
-                            <span class="song-artist"
-                                >Сильные духом любят добро</span
-                            >
-                        </div>
-                        <span class="song-duration">10:10</span>
-                    </div>
-                    <div class="song player-song-container player-play-pause">
-                        <div class="song-now-playing-icon-container"></div>
-                        <div class="song-meta-data">
-                            <span class="song-title">Глава 9</span>
-                            <span class="song-artist"
-                                >С Богом и слабый сильнее льва</span
-                            >
-                        </div>
-                        <span class="song-duration">06:15</span>
-                    </div>
-                    <div class="song player-song-container player-play-pause">
-                        <div class="song-now-playing-icon-container"></div>
-                        <div class="song-meta-data">
-                            <span class="song-title">Глава 10</span>
-                            <span class="song-artist">Плен</span>
-                        </div>
-                        <span class="song-duration">14:11</span>
-                    </div>
-                    <div class="song player-song-container player-play-pause">
-                        <div class="song-now-playing-icon-container"></div>
-                        <div class="song-meta-data">
-                            <span class="song-title">Глава 11</span>
-                            <span class="song-artist">Шрамы души</span>
-                        </div>
-                        <span class="song-duration">24:08</span>
-                    </div>
-                    <div class="song player-song-container player-play-pause">
-                        <div class="song-now-playing-icon-container"></div>
-                        <div class="song-meta-data">
-                            <span class="song-title">Глава 12</span>
-                            <span class="song-artist">Путь лжи</span>
-                        </div>
-                        <span class="song-duration">16:41</span>
-                    </div>
-                    <div class="song player-song-container player-play-pause">
-                        <div class="song-now-playing-icon-container"></div>
-                        <div class="song-meta-data">
-                            <span class="song-title">Глава 13</span>
-                            <span class="song-artist">Офицерский крест</span>
-                        </div>
-                        <span class="song-duration">08:14</span>
-                    </div>
-                    <div class="song player-song-container player-play-pause">
-                        <div class="song-now-playing-icon-container"></div>
-                        <div class="song-meta-data">
-                            <span class="song-title">Заключение</span>
-                        </div>
-                        <span class="song-duration">12:11</span>
-                    </div>
-                </div>
-                <!-- End Right Side Player -->
-            </div>
-
-            <!-- End of AUDIO -->
         </div>
     </body>
 </html>

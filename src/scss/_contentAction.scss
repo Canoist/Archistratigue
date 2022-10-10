@@ -1,7 +1,4 @@
 .content-action {
-    display: flex;
-    justify-content: center;
-    gap: 128px;
     padding: 58px 0 79px;
 
     @media screen and (max-width: 1024px) {
@@ -13,12 +10,6 @@
 
     .action-element {
         width: 310px;
-
-        &:nth-child(2) {
-            @media screen and (max-width: 1024px) {
-                margin-top: 64px;
-            }
-        }
 
         .btn {
             font-family: "Open Sans", sans-serif;
@@ -43,9 +34,6 @@
             }
         }
 
-        &:first-child p {
-            width: 270px;
-        }
         p {
             margin: 14px auto 0;
             width: 303px;
