@@ -7,6 +7,8 @@ import sounds from "./sounds";
 import setDuration from "./setDuration";
 import setMetaData from "./setMetaData";
 import setCurrentTime from "./setCurrentTime";
+import toggleButton from "./toggleButton";
+import generateSound from "./generateSound";
 
 Swiper.use([Autoplay, Pagination, EffectFade]);
 
@@ -28,11 +30,15 @@ const swiper = new Swiper(".swiper", {
     },
 });
 
-const playerLeft = document.querySelector("#player-left");
 const songElements = document.getElementsByClassName("song");
+const controlButton = document.querySelector(".player-play-pause");
+const prevButton = document.querySelector("#previous");
+const playButton = document.querySelector("#play");
+const nextButton = document.querySelector("#next");
 
+let index = 0;
 let sound = new Howl({
-    src: sounds[0].src,
+    src: sounds[index].src,
     html5: true,
     onload: () => {
         const totalDurationInSec = sound.duration();
@@ -48,21 +54,16 @@ let sound = new Howl({
 
 for (let i = 0; i < songElements.length; i++) {
     songElements[i].addEventListener("click", function () {
+        if (playButton.classList.contains("player-play-pause-active")) {
+            toggleButton();
+        }
+
         Howler.stop();
-        sound = new Howl({
-            src: sounds[i].src,
-            html5: true,
-            onload: () => {
-                const totalDurationInSec = sound.duration();
-                const formattedDuration = intervalToDuration({
-                    start: 0,
-                    end: totalDurationInSec * 1000,
-                });
-                setDuration(formattedDuration);
-                setMetaData(sounds[i]);
-            },
-        });
+
+        index = i;
+        sound = generateSound(index);
         sound.play();
+
         setInterval(function tick() {
             const formattedDuration = intervalToDuration({
                 start: 0,
@@ -72,3 +73,45 @@ for (let i = 0; i < songElements.length; i++) {
         }, 1000);
     });
 }
+
+controlButton.addEventListener("click", () => {
+    toggleButton();
+    if (playButton.classList.contains("player-play-pause-active")) {
+        sound.pause();
+    } else {
+        sound.play();
+    }
+});
+
+prevButton.addEventListener("click", () => {
+    if (playButton.classList.contains("player-play-pause-active")) {
+        toggleButton();
+    }
+
+    Howler.stop();
+
+    if (index === 0) {
+        index = sounds.length;
+    }
+
+    index -= 1;
+    sound = generateSound(index);
+    sound.play();
+});
+
+nextButton.addEventListener("click", () => {
+    if (playButton.classList.contains("player-play-pause-active")) {
+        toggleButton();
+    }
+
+    Howler.stop();
+
+    if (index === sounds.length - 1) {
+        index = 0;
+    } else {
+        index += 1;
+    }
+
+    sound = generateSound(index);
+    sound.play();
+});

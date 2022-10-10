@@ -27,8 +27,11 @@ div#control-container {
             div#play-pause {
                 display: inline-block;
                 cursor: pointer;
-                & #pause {
+                & svg {
                     display: none;
+                }
+                & .player-play-pause-active {
+                    display: inline-block;
                 }
             }
 
