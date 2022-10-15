@@ -11,10 +11,12 @@
     }
 
     .action-element {
-        width: 310px;
+        display: flex;
+        margin: 0 auto;
 
         .btn {
             font-family: "Open Sans", sans-serif;
+            width: 310px;
             font-weight: 700;
             font-size: 14px;
             line-height: 19px;
@@ -34,6 +36,10 @@
                 background-color: #ffd265;
                 box-shadow: 0px 4px 16px $goldText;
             }
+        }
+
+        @media screen and (max-width: 1024px) {
+            display: block;
         }
 
         p {
