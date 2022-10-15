@@ -1,3 +1,5 @@
+@import "../variables";
+
 div#player-right {
     padding: 0px;
     overflow-y: scroll;
@@ -6,16 +8,38 @@ div#player-right {
     flex-direction: column;
     height: 427px;
     background: #222627;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    line-height: 22px;
 
     div.song {
         cursor: pointer;
-        padding: 10px;
+        padding: 16px 8px;
+
+        &:hover {
+            background: #000000;
+            div.song-meta-data span.song-title {
+                color: $goldText;
+            }
+        }
 
         div.song-now-playing-icon-container {
             float: left;
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
+            width: 8px;
+            height: 8px;
+            margin-top: 7px;
+            margin-right: 8px;
+            border-radius: 50%;
+            content: "";
+        }
+
+        &.active {
+            div.song-meta-data span.song-title {
+                color: $goldText;
+            }
+            div.song-now-playing-icon-container {
+                background-color: $goldText;
+            }
         }
 
         div.song-meta-data {
@@ -23,33 +47,40 @@ div#player-right {
             width: calc(100% - 110px);
 
             span.song-title {
-                color: #272726;
-                font-size: 16px;
                 display: block;
-                font-weight: 300;
+                color: #ffffff;
+                text-transform: uppercase;
+                font-weight: 700;
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
             }
             span.song-artist {
-                color: #607d8b;
-                font-size: 14px;
-                font-weight: bold;
-                text-transform: uppercase;
+                color: #ffffff;
+                opacity: 0.8;
+                font-weight: 400;
                 display: block;
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
             }
         }
-        span.song-duration {
-            float: left;
-            width: 55px;
-            text-align: center;
-            line-height: 45px;
-            color: #607d8b;
-            font-size: 16px;
-            font-weight: 500;
+        .song-meta-duration {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            span.song-duration {
+                float: left;
+                color: #ffffff;
+                opacity: 0.8;
+                font-size: 16px;
+                font-weight: 500;
+                margin-bottom: 7px;
+            }
+            svg:hover path {
+                stroke: $goldText;
+            }
         }
     }
 }
