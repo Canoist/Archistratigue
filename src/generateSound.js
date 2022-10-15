@@ -24,6 +24,9 @@ export default function generateSound(index) {
         onplay: function () {
             requestAnimationFrame(step);
         },
+        onseek: function () {
+            requestAnimationFrame(step);
+        },
     });
 
     function step() {

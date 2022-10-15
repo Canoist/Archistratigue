@@ -4,9 +4,6 @@ import { Howl, Howler } from "howler";
 import { intervalToDuration, formatDuration } from "date-fns";
 import "swiper/css";
 import sounds from "./sounds";
-import setDuration from "./setDuration";
-import setMetaData from "./setMetaData";
-import setCurrentTime from "./setCurrentTime";
 import toggleButton from "./toggleButton";
 import generateSound from "./generateSound";
 
@@ -35,11 +32,12 @@ const controlButton = document.querySelector(".player-play-pause");
 const prevButton = document.querySelector("#previous");
 const playButton = document.querySelector("#play");
 const nextButton = document.querySelector("#next");
+const progressContainer = document.querySelector("#progress-container");
 const songProgress = document.querySelector(".player-song-played-progress");
 songProgress.style.width = "0%";
 
-let index = null;
-let sound = null;
+let index = 0;
+let sound = generateSound(index);
 
 for (let i = 0; i < songElements.length; i++) {
     songElements[i].addEventListener("click", function () {
@@ -64,10 +62,10 @@ for (let i = 0; i < songElements.length; i++) {
 }
 
 controlButton.addEventListener("click", () => {
-    if (!sound) {
-        index = 0;
-        sound = generateSound(index);
-    }
+    // if (!sound) {
+    //     index = 0;
+    //     sound = generateSound(index);
+    // }
     toggleButton();
     if (playButton.classList.contains("player-play-pause-active")) {
         sound.pause();
@@ -107,4 +105,15 @@ nextButton.addEventListener("click", () => {
 
     sound = generateSound(index);
     sound.play();
+});
+
+progressContainer.addEventListener("click", (e) => {
+    const value = e.offsetX / e.target.offsetWidth;
+    sound.seek(sound.duration() * value);
+    if (sound.playing()) {
+        sound.seek(sound.duration() * value);
+    }
+    if (playButton.classList.contains("player-play-pause-active")) {
+        toggleButton();
+    }
 });

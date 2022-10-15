@@ -42,3 +42,9 @@ div#control-container {
         }
     }
 }
+
+div#control-container:after {
+    content: "";
+    display: table;
+    clear: both;
+}
