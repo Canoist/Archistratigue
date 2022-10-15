@@ -1,5 +1,6 @@
 @import "./nullStyles";
 @import "./initialStyles";
+@import "./variables";
 @import "./contentAbout";
 @import "./contentVideo";
 @import "./contentAction";
@@ -11,10 +12,10 @@
 @import "./components/player";
 @import "./components/player-left";
 @import "./components/player-right";
-@import "./components/progress";
 @import "./components/controls";
 @import "./components/time-container";
 @import "./components/meta-container";
+@import "./components/progress";
 
 .content {
     text-align: center;

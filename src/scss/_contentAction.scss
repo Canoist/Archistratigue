@@ -1,3 +1,5 @@
+@import "./variables";
+
 .content-action {
     padding: 58px 0 40px;
 
@@ -30,7 +32,7 @@
             text-transform: uppercase;
             &:hover {
                 background-color: #ffd265;
-                box-shadow: 0px 4px 16px #ffb500;
+                box-shadow: 0px 4px 16px $goldText;
             }
         }
 

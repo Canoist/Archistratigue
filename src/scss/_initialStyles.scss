@@ -1,3 +1,5 @@
+@import "./variables";
+
 *,
 *::before,
 *::after {
@@ -43,9 +45,6 @@ body {
         line-height: 18px;
     }
 }
-
-$goldHeaders: #ffaa0d;
-$goldText: #ffb500;
 
 @font-face {
     font-family: "Cheque";
