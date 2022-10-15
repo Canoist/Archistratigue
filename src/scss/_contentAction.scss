@@ -1,11 +1,11 @@
 .content-action {
-    padding: 58px 0 79px;
+    padding: 58px 0 40px;
 
     @media screen and (max-width: 1024px) {
         display: block;
         width: 312px;
         margin: 0 auto;
-        padding: 64px 0 70px;
+        padding: 40px 0;
     }
 
     .action-element {
@@ -43,7 +43,6 @@
             }
             &.action-element-read {
                 @media screen and (max-width: 1024px) {
-                    width: 170px;
                     margin: 14px auto 0;
                 }
             }
