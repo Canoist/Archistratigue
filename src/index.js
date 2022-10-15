@@ -6,6 +6,7 @@ import "swiper/css";
 import sounds from "./sounds";
 import toggleButton from "./toggleButton";
 import generateSound from "./generateSound";
+import setCurrentTime from "./setCurrentTime";
 
 Swiper.use([Autoplay, Pagination, EffectFade]);
 
@@ -34,6 +35,7 @@ const playButton = document.querySelector("#play");
 const nextButton = document.querySelector("#next");
 const progressContainer = document.querySelector("#progress-container");
 const songProgress = document.querySelector(".player-song-played-progress");
+const songSlider = document.querySelector(".player-song-slider");
 songProgress.style.width = "0%";
 
 let index = 0;
@@ -62,10 +64,6 @@ for (let i = 0; i < songElements.length; i++) {
 }
 
 controlButton.addEventListener("click", () => {
-    // if (!sound) {
-    //     index = 0;
-    //     sound = generateSound(index);
-    // }
     toggleButton();
     if (playButton.classList.contains("player-play-pause-active")) {
         sound.pause();
@@ -115,5 +113,16 @@ progressContainer.addEventListener("click", (e) => {
     }
     if (playButton.classList.contains("player-play-pause-active")) {
         toggleButton();
+        sound.play();
     }
+});
+
+songSlider.addEventListener(["input", "touchmove"], (e) => {
+    const { value } = e.target;
+    const totalDurationInSec = (sound.duration() * value) / 100;
+    const formattedDuration = intervalToDuration({
+        start: 0,
+        end: totalDurationInSec * 1000,
+    });
+    setCurrentTime(formattedDuration);
 });
