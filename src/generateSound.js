@@ -5,7 +5,7 @@ import setDuration from "./setDuration";
 import setMetaData from "./setMetaData";
 import sounds from "./sounds";
 const songSlider = document.querySelector(".player-song-slider");
-const songProgress = document.querySelector(".player-song-played-progress");
+const songProgress = document.querySelector("#song-buffered-progress");
 
 export default function generateSound(index) {
     const sound = new Howl({
@@ -34,8 +34,7 @@ export default function generateSound(index) {
             start: 0,
             end: sound.seek() * 1000,
         });
-        songProgress.style.width =
-            (sound.seek() * 100) / sound.duration() + "%";
+        songProgress.value = sound.seek() / sound.duration();
         songSlider.value = (sound.seek() * 100) / sound.duration();
         setCurrentTime(formattedDuration);
 

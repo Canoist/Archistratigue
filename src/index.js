@@ -34,11 +34,7 @@ const prevButton = document.querySelector("#previous");
 const playButton = document.querySelector("#play");
 const nextButton = document.querySelector("#next");
 const progressContainer = document.querySelector("#progress-container");
-const songProgress = document.querySelector(".player-song-played-progress");
 const songSlider = document.querySelector(".player-song-slider");
-songProgress.style.width = "0%";
-songProgress.style.backgroundColor = "#ffb500";
-songProgress.style.borderRadius = "5px";
 
 let index = 0;
 let sound = generateSound(index);
