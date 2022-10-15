@@ -14,56 +14,6 @@ div#progress-container {
         }
     }
 
-    progress#song-played-progress {
-        width: 100%;
-        position: absolute;
-        left: 0;
-        top: 8px;
-        right: 0;
-        width: 100%;
-        z-index: 60;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        height: 4px;
-        border-radius: 5px;
-        background: transparent;
-        border: none; /* Needed for Firefox */
-    }
-    @media all and (-ms-high-contrast: none) {
-        *::-ms-backdrop,
-        progress#song-played-progress {
-            color: #00a0ff;
-            border: none;
-            background-color: #cfd8dc;
-        }
-    }
-
-    @supports (-ms-ime-align: auto) {
-        progress#song-played-progress {
-            color: #00a0ff;
-            border: none;
-        }
-    }
-
-    progress#song-played-progress[value]::-webkit-progress-bar {
-        background: none;
-        border-radius: 5px;
-    }
-
-    progress#song-played-progress[value]::-webkit-progress-value {
-        background-color: #00a0ff;
-        border-radius: 5px;
-    }
-
-    progress#song-played-progress::-moz-progress-bar {
-        background: none;
-        border-radius: 5px;
-        background-color: #00a0ff;
-        height: 5px;
-        margin-top: -2px;
-    }
-
     progress#song-buffered-progress {
         position: absolute;
         left: 0;
