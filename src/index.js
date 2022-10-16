@@ -41,7 +41,10 @@ let index = 0;
 let sound = generateSound(index);
 
 for (let i = 0; i < songElements.length; i++) {
-    songElements[i].addEventListener("click", function () {
+    songElements[i].addEventListener("click", (e) => {
+        if (e.target.closest("a")) {
+            return;
+        }
         if (index === i) {
             if (sound.playing()) {
                 sound.pause();
