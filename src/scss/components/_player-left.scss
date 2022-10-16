@@ -1,7 +1,6 @@
 div#player-left {
     padding: 0px;
-    border-right: 1px solid #cfd8dc;
-    width: 50%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     font-family: "Open Sans";
@@ -9,15 +8,18 @@ div#player-left {
     div#player-left-bottom {
         flex: 1;
         background-color: #000000;
-        padding: 20px 10px;
+        padding: 64px 44px;
     }
 }
 
 /* Small only */
-@media screen and (max-width: 39.9375em) {
+@media screen and (max-width: 1023.9px) {
     div#player {
         div#player-left {
             width: 100%;
+        }
+        div#player-left-bottom {
+            padding: 15px 10px;
         }
     }
 }

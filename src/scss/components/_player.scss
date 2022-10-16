@@ -2,28 +2,24 @@ div#player {
     background: #ffffff;
     box-shadow: 0 2px 12px 8px rgba(0, 0, 0, 0.1);
     margin: auto;
-    margin-bottom: 88px;
+    margin-bottom: 92px;
     display: flex;
-    max-width: 900px;
-}
+    max-width: 1024px;
 
-/* Small only */
-@media screen and (max-width: 39.9375em) {
-    div#player {
+    /* Small only */
+    @media screen and (max-width: 1023.9px) {
+        margin-bottom: 88px;
         flex-direction: column;
     }
-}
 
-/* Medium only */
-@media screen and (min-width: 40em) and (max-width: 63.9375em) {
-    div#player {
-        max-height: 715px;
+    /* Medium only */
+    @media screen and (min-width: 1024px) and (max-width: 1439.9px) {
+        max-width: 1440px;
+        max-height: 427px;
     }
-}
 
-/* Large and up */
-@media screen and (min-width: 64em) {
-    div#player {
-        max-height: 715px;
+    /* Large and up */
+    @media screen and (min-width: 1440px) {
+        max-height: 427px;
     }
 }
