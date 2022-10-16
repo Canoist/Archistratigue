@@ -7,6 +7,7 @@ import sounds from "./sounds";
 import toggleButton from "./toggleButton";
 import generateSound from "./generateSound";
 import setCurrentTime from "./setCurrentTime";
+import setActiveTrack from "./setActiveTrack";
 
 Swiper.use([Autoplay, Pagination, EffectFade]);
 
@@ -56,6 +57,7 @@ for (let i = 0; i < songElements.length; i++) {
             Howler.stop();
             index = i;
             sound = generateSound(index);
+            setActiveTrack(index);
             sound.play();
         }
     });
@@ -83,6 +85,7 @@ prevButton.addEventListener("click", () => {
 
     index -= 1;
     sound = generateSound(index);
+    setActiveTrack(index);
     sound.play();
 });
 
@@ -100,6 +103,7 @@ nextButton.addEventListener("click", () => {
     }
 
     sound = generateSound(index);
+    setActiveTrack(index);
     sound.play();
 });
 
