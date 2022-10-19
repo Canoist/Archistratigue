@@ -1,0 +1,52 @@
+@import "../variables";
+
+#loader {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: #333232;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: step 1s infinite linear;
+    .loader-border {
+        position: relative;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: conic-gradient(
+            from 90deg at 50% 50%,
+            rgba(172, 146, 237, 0) 0deg,
+            rgba(255, 181, 0, 0) 0.04deg,
+            #ffb500 360deg
+        );
+        &::before {
+            content: "";
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: #333232;
+        }
+        .loader-point {
+            height: 3px;
+            width: 3px;
+            position: absolute;
+            background-color: $goldText;
+            left: 21px;
+            top: 10px;
+            border-radius: 50%;
+        }
+    }
+}
+
+@keyframes step {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
