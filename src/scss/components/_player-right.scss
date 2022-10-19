@@ -1,0 +1,94 @@
+@import "../variables";
+
+div#player-right {
+    padding: 0px;
+    overflow-y: scroll;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    height: 429px;
+    background: #222627;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+    border-bottom: 2px solid #000000;
+
+    div.song {
+        cursor: pointer;
+        padding: 16px 8px;
+
+        &:hover {
+            background: #000000;
+            div.song-meta-data span.song-title {
+                color: $goldText;
+            }
+        }
+
+        div.song-now-playing-icon-container {
+            float: left;
+            width: 8px;
+            height: 8px;
+            margin-top: 7px;
+            margin-right: 8px;
+            border-radius: 50%;
+            content: "";
+        }
+
+        &.active {
+            div.song-meta-data span.song-title {
+                color: $goldText;
+            }
+            div.song-now-playing-icon-container {
+                background-color: $goldText;
+            }
+        }
+
+        div.song-meta-data {
+            float: left;
+            width: calc(100% - 110px);
+
+            span.song-title {
+                display: block;
+                color: #ffffff;
+                text-transform: uppercase;
+                font-weight: 700;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            span.song-artist {
+                color: #ffffff;
+                opacity: 0.8;
+                font-weight: 400;
+                display: block;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+        .song-meta-duration {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            span.song-duration {
+                float: left;
+                color: #ffffff;
+                opacity: 0.8;
+                font-size: 16px;
+                font-weight: 500;
+                margin-bottom: 7px;
+            }
+            svg:hover path {
+                stroke: $goldText;
+            }
+        }
+    }
+    /* Small only */
+    @media screen and (max-width: 1023.9px) {
+        width: 100%;
+    }
+    @media screen and (min-width: 1440px) {
+        border-bottom: none;
+    }
+}

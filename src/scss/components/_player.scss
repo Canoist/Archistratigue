@@ -1,0 +1,25 @@
+div#player {
+    background: #ffffff;
+    box-shadow: 0 2px 12px 8px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    display: flex;
+    min-width: 350px;
+    max-width: 1024px;
+
+    /* Small only */
+    @media screen and (max-width: 1023.9px) {
+        flex-direction: column;
+    }
+
+    /* Medium only */
+    @media screen and (min-width: 1024px) and (max-width: 1439.9px) {
+        max-width: 1440px;
+        max-height: 429px;
+    }
+
+    /* Large and up */
+    @media screen and (min-width: 1440px) {
+        max-height: 429px;
+        margin-bottom: 92px;
+    }
+}

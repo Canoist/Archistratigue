@@ -1,0 +1,21 @@
+div#time-container {
+    font-size: 14px;
+    font-weight: 700;
+    span.current-time {
+        float: left;
+        width: 15%;
+        text-align: center;
+    }
+
+    span.player-duration {
+        float: left;
+        width: 15%;
+        text-align: center;
+    }
+}
+
+div#time-container:after {
+    content: "";
+    display: table;
+    clear: both;
+}

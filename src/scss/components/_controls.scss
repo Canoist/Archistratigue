@@ -1,0 +1,69 @@
+@import "../variables";
+
+div#control-container {
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+    @media all and (-ms-high-contrast: none) {
+        *::-ms-backdrop,
+        div#control-container {
+            margin-top: 40px;
+            float: none;
+        }
+    }
+
+    div#central-control-container {
+        width: 100%;
+
+        div#central-controls {
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+
+            div#previous {
+                display: inline-block;
+                cursor: pointer;
+            }
+
+            div#play-pause {
+                display: inline-block;
+                cursor: pointer;
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+                background-color: $goldText;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                & svg {
+                    display: none;
+                }
+                & #play {
+                    padding-left: 2.5px;
+                    width: 24px;
+                    height: 24px;
+                }
+                & .player-play-pause-active {
+                    display: inline-block;
+                }
+            }
+
+            div#next {
+                display: inline-block;
+                cursor: pointer;
+            }
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        margin-top: 88px;
+    }
+}
+
+div#control-container:after {
+    content: "";
+    display: table;
+    clear: both;
+}
