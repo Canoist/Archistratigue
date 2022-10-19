@@ -39,6 +39,9 @@ div#control-container {
                 align-items: center;
                 & svg {
                     display: none;
+                }
+                & #play {
+                    padding-left: 2.5px;
                     width: 24px;
                     height: 24px;
                 }
