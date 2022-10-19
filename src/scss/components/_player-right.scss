@@ -6,11 +6,12 @@ div#player-right {
     width: 60%;
     display: flex;
     flex-direction: column;
-    height: 427px;
+    height: 429px;
     background: #222627;
     font-family: "Open Sans", sans-serif;
     font-size: 16px;
     line-height: 22px;
+    border-bottom: 2px solid #000000;
 
     div.song {
         cursor: pointer;
@@ -83,13 +84,11 @@ div#player-right {
             }
         }
     }
-}
-
-/* Small only */
-@media screen and (max-width: 1023.9px) {
-    #player {
-        div#player-right {
-            width: 100%;
-        }
+    /* Small only */
+    @media screen and (max-width: 1023.9px) {
+        width: 100%;
+    }
+    @media screen and (min-width: 1440px) {
+        border-bottom: none;
     }
 }

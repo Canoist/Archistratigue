@@ -1,3 +1,5 @@
+@import "../variables";
+
 div#player-left {
     padding: 0px;
     width: 40%;
@@ -5,10 +7,22 @@ div#player-left {
     flex-direction: column;
     font-family: "Open Sans";
 
+    p {
+        text-transform: uppercase;
+        text-align: center;
+        color: $goldText;
+        font-weight: 700;
+        margin-bottom: 28.5px;
+        line-height: 19px;
+        @media screen and (min-width: 1024px) {
+            margin-bottom: 85.5px;
+        }
+    }
+
     div#player-left-bottom {
         flex: 1;
         background-color: #000000;
-        padding: 64px 44px;
+        padding: 24.5px 43.5px;
     }
 }
 
@@ -19,7 +33,7 @@ div#player-left {
             width: 100%;
         }
         div#player-left-bottom {
-            padding: 15px 10px;
+            padding: 24.5px 18px;
         }
     }
 }
