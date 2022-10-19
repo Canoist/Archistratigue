@@ -5,10 +5,13 @@
     width: 60px;
     height: 60px;
     background-color: #333232;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     animation: step 1s infinite linear;
+    &.hidden {
+        display: flex;
+    }
     .loader-border {
         position: relative;
         width: 24px;

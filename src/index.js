@@ -8,6 +8,7 @@ import toggleButton from "./toggleButton";
 import generateSound from "./generateSound";
 import setCurrentTime from "./setCurrentTime";
 import setActiveTrack from "./setActiveTrack";
+import showLoader from "./showLoader";
 
 Swiper.use([Autoplay, Pagination, EffectFade]);
 
@@ -38,6 +39,7 @@ const progressContainer = document.querySelector("#progress-container");
 const songSlider = document.querySelector(".player-song-slider");
 
 let index = 0;
+showLoader();
 let sound = generateSound(index);
 
 for (let i = 0; i < songElements.length; i++) {
@@ -59,6 +61,7 @@ for (let i = 0; i < songElements.length; i++) {
 
             Howler.stop();
             index = i;
+            showLoader();
             sound = generateSound(index);
             setActiveTrack(index);
             sound.play();
@@ -76,6 +79,7 @@ controlButton.addEventListener("click", () => {
 });
 
 prevButton.addEventListener("click", () => {
+    showLoader();
     if (playButton.classList.contains("player-play-pause-active")) {
         toggleButton();
     }
@@ -93,6 +97,7 @@ prevButton.addEventListener("click", () => {
 });
 
 nextButton.addEventListener("click", () => {
+    showLoader();
     if (playButton.classList.contains("player-play-pause-active")) {
         toggleButton();
     }

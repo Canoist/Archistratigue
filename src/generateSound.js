@@ -4,8 +4,11 @@ import setCurrentTime from "./setCurrentTime";
 import setDuration from "./setDuration";
 import setMetaData from "./setMetaData";
 import sounds from "./sounds";
+
 const songSlider = document.querySelector(".player-song-slider");
 const songProgress = document.querySelector("#song-buffered-progress");
+const controlButton = document.querySelector(".player-play-pause");
+const loader = document.querySelector("#loader");
 
 export default function generateSound(index) {
     const sound = new Howl({
@@ -20,6 +23,8 @@ export default function generateSound(index) {
             setCurrentTime();
             setDuration(formattedDuration);
             setMetaData(sounds[index]);
+            loader.classList.remove("hidden");
+            controlButton.style.display = "flex";
         },
         onplay: function () {
             requestAnimationFrame(step);
