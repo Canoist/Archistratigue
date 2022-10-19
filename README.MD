@@ -33,7 +33,9 @@ cd .\Archistratigue\
 
 и установить зависимости
 
-`npm install` или `npm i`
+```
+npm install
+```
 
 ## Запуск проекта в режиме разработки
 
