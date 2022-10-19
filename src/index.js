@@ -1,7 +1,7 @@
 import "./scss/styles.scss";
 import Swiper, { Pagination, EffectFade, Autoplay } from "swiper";
-import { Howl, Howler } from "howler";
-import { intervalToDuration, formatDuration } from "date-fns";
+import { Howler } from "howler";
+import { intervalToDuration } from "date-fns";
 import "swiper/css";
 import sounds from "./sounds";
 import toggleButton from "./toggleButton";
@@ -9,6 +9,15 @@ import generateSound from "./generateSound";
 import setCurrentTime from "./setCurrentTime";
 import setActiveTrack from "./setActiveTrack";
 import showLoader from "./showLoader";
+import {
+    controlButton,
+    nextButton,
+    playButton,
+    prevButton,
+    progressContainer,
+    songList,
+    songSlider,
+} from "./elements";
 
 Swiper.use([Autoplay, Pagination, EffectFade]);
 
@@ -30,20 +39,12 @@ const swiper = new Swiper(".swiper", {
     },
 });
 
-const songElements = document.getElementsByClassName("song");
-const controlButton = document.querySelector(".player-play-pause");
-const prevButton = document.querySelector("#previous");
-const playButton = document.querySelector("#play");
-const nextButton = document.querySelector("#next");
-const progressContainer = document.querySelector("#progress-container");
-const songSlider = document.querySelector(".player-song-slider");
-
 let index = 0;
 showLoader();
 let sound = generateSound(index);
 
-for (let i = 0; i < songElements.length; i++) {
-    songElements[i].addEventListener("click", (e) => {
+for (let i = 0; i < songList.length; i++) {
+    songList[i].addEventListener("click", (e) => {
         if (e.target.closest("a")) {
             return;
         }

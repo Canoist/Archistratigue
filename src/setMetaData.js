@@ -1,4 +1,4 @@
-const playerLeft = document.querySelector("#player-left");
+import { playerLeft } from "./elements";
 
 export default function setMetaData(metaData) {
     if (metaData) {

@@ -1,0 +1,11 @@
+export const controlButton = document.querySelector(".player-play-pause");
+export const prevButton = document.querySelector("#previous");
+export const playButton = document.querySelector("#play");
+export const nextButton = document.querySelector("#next");
+export const progressContainer = document.querySelector("#progress-container");
+export const songSlider = document.querySelector(".player-song-slider");
+export const pauseButton = document.querySelector("#pause");
+export const songProgress = document.querySelector("#song-buffered-progress");
+export const loader = document.querySelector("#loader");
+export const songList = document.querySelectorAll(".song");
+export const playerLeft = document.querySelector("#player-left");

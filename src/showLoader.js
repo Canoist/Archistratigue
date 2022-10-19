@@ -1,5 +1,4 @@
-const loader = document.querySelector("#loader");
-const controlButton = document.querySelector(".player-play-pause");
+import { controlButton, loader } from "./elements";
 
 export default function showLoader() {
     loader.classList.add("hidden");

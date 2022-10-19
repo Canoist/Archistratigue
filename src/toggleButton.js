@@ -1,5 +1,4 @@
-const playButton = document.querySelector("#play");
-const pauseButton = document.querySelector("#pause");
+import { pauseButton, playButton } from "./elements";
 
 export default function toggleButton() {
     playButton.classList.toggle("player-play-pause-active");

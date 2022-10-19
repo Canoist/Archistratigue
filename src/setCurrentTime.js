@@ -1,4 +1,4 @@
-const playerLeft = document.querySelector("#player-left");
+import { playerLeft } from "./elements";
 
 export default function setCurrentTime(formattedTime) {
     if (!formattedTime) {

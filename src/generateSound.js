@@ -1,14 +1,10 @@
 import { intervalToDuration } from "date-fns";
 import { Howl } from "howler";
+import { controlButton, loader, songProgress, songSlider } from "./elements";
 import setCurrentTime from "./setCurrentTime";
 import setDuration from "./setDuration";
 import setMetaData from "./setMetaData";
 import sounds from "./sounds";
-
-const songSlider = document.querySelector(".player-song-slider");
-const songProgress = document.querySelector("#song-buffered-progress");
-const controlButton = document.querySelector(".player-play-pause");
-const loader = document.querySelector("#loader");
 
 export default function generateSound(index) {
     const sound = new Howl({
