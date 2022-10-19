@@ -53,12 +53,27 @@ module.exports = {
                 loader: "babel-loader",
             },
             {
-                test: /\.(png|svg|jpg|jpeg|gif|mp3|pdf)$/i,
+                test: /\.(svg|jpg|jpeg|gif|mp3)$/i,
                 type: "asset/resource",
+                generator: {
+                    filename: "[name][ext]",
+                },
             },
             {
                 test: /\.html$/,
-                use: ["html-loader"],
+                loader: "html-loader",
+                options: {
+                    sources: {
+                        list: [
+                            "...",
+                            {
+                                tag: "a",
+                                attribute: "href",
+                                type: "srcset",
+                            },
+                        ],
+                    },
+                },
             },
         ],
     },
