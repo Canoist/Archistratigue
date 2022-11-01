@@ -16,6 +16,7 @@ import {
     prevButton,
     progressContainer,
     songList,
+    songProgress,
 } from "./elements";
 
 Swiper.use([Autoplay, Pagination, EffectFade]);
@@ -124,6 +125,7 @@ progressContainer.addEventListener("mousedown", (e) => {
 
 progressContainer.addEventListener("mousemove", (e) => {
     const { value } = e.target;
+    songProgress.value = value / 100;
     const formattedDuration = intervalToDuration({
         start: 0,
         end: ((sound.duration() * value) / 100) * 1000,
@@ -149,6 +151,7 @@ progressContainer.addEventListener("touchstart", (e) => {
 
 progressContainer.addEventListener("touchmove", (e) => {
     const { value } = e.target;
+    songProgress.value = value / 100;
     const formattedDuration = intervalToDuration({
         start: 0,
         end: ((sound.duration() * value) / 100) * 1000,
