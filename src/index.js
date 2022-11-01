@@ -147,6 +147,15 @@ progressContainer.addEventListener("touchstart", (e) => {
     }
 });
 
+progressContainer.addEventListener("touchmove", (e) => {
+    const { value } = e.target;
+    const formattedDuration = intervalToDuration({
+        start: 0,
+        end: ((sound.duration() * value) / 100) * 1000,
+    });
+    setCurrentTime(formattedDuration);
+});
+
 progressContainer.addEventListener("touchend", (e) => {
     const { value } = e.target;
     sound.seek((sound.duration() * value) / 100);
