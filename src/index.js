@@ -16,7 +16,6 @@ import {
     prevButton,
     progressContainer,
     songList,
-    songSlider,
 } from "./elements";
 
 Swiper.use([Autoplay, Pagination, EffectFade]);
@@ -128,12 +127,14 @@ progressContainer.addEventListener("click", (e) => {
     }
 });
 
-songSlider.addEventListener(["input", "touchmove"], (e) => {
+progressContainer.addEventListener("touchend", (e) => {
     const { value } = e.target;
-    const totalDurationInSec = (sound.duration() * value) / 100;
-    const formattedDuration = intervalToDuration({
-        start: 0,
-        end: totalDurationInSec * 1000,
-    });
-    setCurrentTime(formattedDuration);
+    sound.seek((sound.duration() * value) / 100);
+    if (sound.playing()) {
+        sound.seek((sound.duration() * value) / 100);
+    }
+    if (playButton.classList.contains("player-play-pause-active")) {
+        toggleButton();
+        sound.play();
+    }
 });
