@@ -115,24 +115,32 @@ nextButton.addEventListener("click", () => {
     sound.play();
 });
 
+progressContainer.addEventListener("mousedown", (e) => {
+    if (sound.playing()) {
+        toggleButton();
+        sound.pause();
+    }
+});
+
 progressContainer.addEventListener("click", (e) => {
     const value = e.offsetX / e.target.offsetWidth;
     sound.seek(sound.duration() * value);
-    if (sound.playing()) {
-        sound.seek(sound.duration() * value);
-    }
     if (playButton.classList.contains("player-play-pause-active")) {
         toggleButton();
         sound.play();
     }
 });
 
+progressContainer.addEventListener("touchstart", (e) => {
+    if (sound.playing()) {
+        toggleButton();
+        sound.pause();
+    }
+});
+
 progressContainer.addEventListener("touchend", (e) => {
     const { value } = e.target;
     sound.seek((sound.duration() * value) / 100);
-    if (sound.playing()) {
-        sound.seek((sound.duration() * value) / 100);
-    }
     if (playButton.classList.contains("player-play-pause-active")) {
         toggleButton();
         sound.play();
