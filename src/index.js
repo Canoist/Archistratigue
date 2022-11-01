@@ -80,6 +80,9 @@ controlButton.addEventListener("click", () => {
 });
 
 prevButton.addEventListener("click", () => {
+    if (prevButton.classList.contains("disable")) {
+        return;
+    }
     showLoader();
     if (playButton.classList.contains("player-play-pause-active")) {
         toggleButton();
@@ -98,6 +101,9 @@ prevButton.addEventListener("click", () => {
 });
 
 nextButton.addEventListener("click", () => {
+    if (nextButton.classList.contains("disable")) {
+        return;
+    }
     showLoader();
     if (playButton.classList.contains("player-play-pause-active")) {
         toggleButton();

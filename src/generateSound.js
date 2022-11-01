@@ -1,6 +1,13 @@
 import { intervalToDuration } from "date-fns";
 import { Howl } from "howler";
-import { controlButton, loader, songProgress, songSlider } from "./elements";
+import {
+    controlButton,
+    loader,
+    nextButton,
+    prevButton,
+    songProgress,
+    songSlider,
+} from "./elements";
 import setCurrentTime from "./setCurrentTime";
 import setDuration from "./setDuration";
 import setMetaData from "./setMetaData";
@@ -10,6 +17,7 @@ export default function generateSound(index) {
     const sound = new Howl({
         src: sounds[index].src,
         html5: true,
+        preload: "metadata",
         onload: () => {
             const totalDurationInSec = sound.duration();
             const formattedDuration = intervalToDuration({
@@ -21,6 +29,8 @@ export default function generateSound(index) {
             setMetaData(sounds[index]);
             loader.classList.remove("hidden");
             controlButton.style.display = "flex";
+            nextButton.classList.remove("disable");
+            prevButton.classList.remove("disable");
         },
         onplay: function () {
             requestAnimationFrame(step);
