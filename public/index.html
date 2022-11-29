@@ -932,13 +932,12 @@
                 player = new YT.Player("ytplayer", {
                     height: "360px",
                     width: "640px",
-
                     playerVars: {
-                        playlist: ["tONeK8NU6FU", "SyWOlcuFHDY"],
+                        autoplay: 0,
                     },
                     events: {
-                        onReady: (e) => {
-                            player.playlist("SyWOlcuFHDY");
+                        onReady: () => {
+                            player.cuePlaylist(["tONeK8NU6FU", "SyWOlcuFHDY"]);
                         },
                     },
                 });
