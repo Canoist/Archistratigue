@@ -11,10 +11,11 @@
 
     .copy {
         display: inline-block;
+        color: $goldHeaders;
 
         &:hover {
             cursor: pointer;
-            color: $goldHeaders;
+            text-decoration: underline;
         }
     }
 
