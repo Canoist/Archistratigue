@@ -11,6 +11,7 @@ import setActiveTrack from "./setActiveTrack";
 import showLoader from "./showLoader";
 import {
     controlButton,
+    copyText,
     nextButton,
     playButton,
     prevButton,
@@ -172,4 +173,8 @@ progressContainer.addEventListener("touchend", (e) => {
         toggleButton();
         sound.play();
     }
+});
+
+copyText.addEventListener("click", (e) => {
+    window.navigator.clipboard.writeText(copyText.innerText);
 });

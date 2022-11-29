@@ -1,10 +1,21 @@
+@import "./variables";
+
 .content-footer {
     margin: 0 auto;
     padding: 50px 0 46px;
-    width: 310px;
+    width: 370px;
 
     @media screen and (max-width: 1024px) {
         padding: 38px 0 66px;
+    }
+
+    .copy {
+        display: inline-block;
+
+        &:hover {
+            cursor: pointer;
+            color: $goldHeaders;
+        }
     }
 
     svg {
