@@ -37,7 +37,8 @@
                     Протоиерей Андрей Ткачёв рассказывает о&nbsp;книге
                     &laquo;Путь Архистратига&raquo;
                 </p>
-                <iframe
+                <div id="ytplayer"></div>
+                <!-- <iframe
                     class="content-video-desktop"
                     src="https://vk.com/video_ext.php?oid=-75679763&id=456276576&hash=7f5676dce3f4a922&hd=1"
                     width="640"
@@ -59,12 +60,12 @@
                 <iframe
                     class="content-video-mobile"
                     src="https://vk.com/video_ext.php?oid=-75679763&id=456276576&hash=7f5676dce3f4a922"
-                    width="297"
-                    height="166"
+                    width="480"
+                    height="270"
                     allow="autoplay; encrypted-media; fullscreen; picture-in-picture;"
                     frameborder="0"
                     allowfullscreen
-                    title="О книге"></iframe>
+                    title="О книге"></iframe> -->
             </div>
         </div>
         <div class="content">
@@ -917,5 +918,31 @@
                 </div>
             </div>
         </div>
+        <script>
+            // Load the IFrame Player API code asynchronously.
+            var tag = document.createElement("script");
+            tag.src = "https://www.youtube.com/player_api";
+            var firstScriptTag = document.getElementsByTagName("script")[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+            // Replace the 'ytplayer' element with an <iframe> and
+            // YouTube player after the API code downloads.
+            var player;
+            function onYouTubePlayerAPIReady() {
+                player = new YT.Player("ytplayer", {
+                    height: "360px",
+                    width: "640px",
+
+                    playerVars: {
+                        playlist: ["tONeK8NU6FU", "SyWOlcuFHDY"],
+                    },
+                    events: {
+                        onReady: (e) => {
+                            player.playlist("SyWOlcuFHDY");
+                        },
+                    },
+                });
+            }
+        </script>
     </body>
 </html>

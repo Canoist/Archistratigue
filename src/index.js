@@ -178,3 +178,4 @@ progressContainer.addEventListener("touchend", (e) => {
 copyText.addEventListener("click", (e) => {
     window.navigator.clipboard.writeText(copyText.innerText);
 });
+
