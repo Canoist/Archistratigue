@@ -12,32 +12,55 @@
             margin: 0 auto 24px;
         }
     }
-
-    .content-video-mobile {
-        display: none;
-
-        @media screen and (max-width: 500px) {
-            display: inline-block;
-        }
-    }
-
-    .content-video-mobile-horizontal {
-        display: none;
-
+    .video-wrapper {
+        width: 640px;
+        margin: 0 auto;
         @media screen and (max-width: 1024px) {
-            display: inline-block;
+            width: 480px;
         }
-
         @media screen and (max-width: 500px) {
-            display: none;
+            width: 390px;
+        }
+        .video-wrapper-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+
+            iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
         }
     }
 
-    .content-video-desktop {
-        display: inline-block;
+    // .content-video-mobile {
+    //     display: none;
 
-        @media screen and (max-width: 1024px) {
-            display: none;
-        }
-    }
+    //     @media screen and (max-width: 500px) {
+    //         display: inline-block;
+    //     }
+    // }
+
+    // .content-video-mobile-horizontal {
+    //     display: none;
+
+    //     @media screen and (max-width: 1024px) {
+    //         display: inline-block;
+    //     }
+
+    //     @media screen and (max-width: 500px) {
+    //         display: none;
+    //     }
+    // }
+
+    // .content-video-desktop {
+    //     display: inline-block;
+
+    //     @media screen and (max-width: 1024px) {
+    //         display: none;
+    //     }
+    // }
 }
