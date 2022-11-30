@@ -1,16 +1,23 @@
 @import "./variables";
 
 .content-book {
-    padding: 30px 0;
+    padding: 30px 0 50px;
 
     .content-book-header {
         width: 390px;
         margin: 0 auto;
+        text-align: left;
+
+        @media screen and (max-width: 1024px) {
+            text-align: center;
+        }
     }
+
     a {
         color: $goldHeaders;
         text-decoration: underline;
     }
+
     .content-book-description {
         display: flex;
         align-items: center;
@@ -25,6 +32,9 @@
             width: 8px;
             background-color: #ffffff;
             margin-top: 10px;
+            @media screen and (max-width: 1024px) {
+                display: none;
+            }
         }
 
         .content-book-description-aside {
@@ -43,6 +53,21 @@
             .btn {
                 @extend %btn;
                 margin-top: 20px;
+                margin: 20px auto 0;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            display: block;
+
+            img,
+            .content-book-description-aside {
+                margin: 0;
+            }
+
+            .divider,
+            .content-book-description-list {
+                display: none;
             }
         }
     }
