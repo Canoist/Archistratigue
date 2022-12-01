@@ -17,3 +17,7 @@ export const formEmail = document.querySelector("#email");
 export const formTel = document.querySelector("#tel");
 export const formButton = document.querySelector("#form-button");
 export const formCoast = document.querySelector("#coast");
+export const errDataName = document.querySelector(".error-dataName");
+export const errAdress = document.querySelector(".error-adress");
+export const errEmail = document.querySelector(".error-email");
+export const errTel = document.querySelector(".error-tel");

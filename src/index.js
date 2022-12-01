@@ -23,6 +23,7 @@ import {
 } from "./elements";
 
 import data from "./getDataForm";
+import validate from "./validate";
 
 Swiper.use([Autoplay, Pagination, EffectFade]);
 
@@ -185,5 +186,6 @@ copyText.addEventListener("click", (e) => {
 
 formButton.addEventListener("click", (e) => {
     e.preventDefault();
+    validate(data);
     console.log(data);
 });

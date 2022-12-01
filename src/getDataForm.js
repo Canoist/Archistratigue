@@ -1,4 +1,8 @@
 import {
+    errAdress,
+    errDataName,
+    errEmail,
+    errTel,
     formAdress,
     formBooks,
     formCoast,
@@ -21,19 +25,27 @@ formBooks.addEventListener("change", ({ target }) => {
 });
 
 formDataName.addEventListener("change", ({ target }) => {
+    target.classList.remove("error");
     data.dataName = target.value.trim();
+    errDataName.style.display = "none";
 });
 
 formAdress.addEventListener("change", ({ target }) => {
+    target.classList.remove("error");
     data.adress = target.value.trim();
+    errAdress.style.display = "none";
 });
 
 formEmail.addEventListener("change", ({ target }) => {
+    target.classList.remove("error");
     data.email = target.value.trim();
+    errEmail.style.display = "none";
 });
 
 formTel.addEventListener("change", ({ target }) => {
+    target.classList.remove("error");
     data.tel = target.value.trim();
+    errTel.style.display = "none";
 });
 
 export default data;
