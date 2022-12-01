@@ -12,6 +12,8 @@ import showLoader from "./showLoader";
 import {
     controlButton,
     copyText,
+    formButton,
+    formCoast,
     nextButton,
     playButton,
     prevButton,
@@ -19,6 +21,8 @@ import {
     songList,
     songProgress,
 } from "./elements";
+
+import data from "./getDataForm";
 
 Swiper.use([Autoplay, Pagination, EffectFade]);
 
@@ -179,3 +183,7 @@ copyText.addEventListener("click", (e) => {
     window.navigator.clipboard.writeText(copyText.innerText);
 });
 
+formButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log(data);
+});

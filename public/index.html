@@ -16,6 +16,67 @@
         <title>Путь Архистратига</title>
     </head>
     <body>
+        <div class="modal">
+            <form>
+                <h4>
+                    Стоимость <nobr>1-го</nobr> экземпляра книги&nbsp;&mdash;
+                    400&nbsp;руб (без учета доставки)
+                </h4>
+                <label for="books">Введите кол-во книг</label>
+                <input
+                    type="number"
+                    name="books"
+                    id="books"
+                    min="1"
+                    value="1"
+                    required />
+
+                <span>Стоимость: <span id="coast">400 руб.</span></span>
+
+                <label for="dataName">ФИО получателя</label>
+                <input
+                    type="text"
+                    minlength="3"
+                    name="dataName"
+                    id="dataName"
+                    required />
+                <p class="form-error error-dataName"></p>
+
+                <label for="adress">Адрес доставки:</label>
+                <textarea
+                    type="text"
+                    name="adress"
+                    id="adress"
+                    minlength="12"
+                    required></textarea>
+                <p class="form-error error-adress"></p>
+
+                <label for="email">Ваша электронная почта: </label>
+                <input type="email" name="email" id="email" required />
+                <p class="form-error error-email"></p>
+
+                <label for="tel">Телефон для связи: </label>
+                <input
+                    type="tel"
+                    name="tel"
+                    id="tel"
+                    required
+                    minlength="10"
+                    maxlength="14" />
+                <p class="form-error error-tel"></p>
+
+                <p>
+                    После получения вашей заявки мы&nbsp;проверим наличие
+                    необходимого <nobr>кол-ва</nobr> книг, а&nbsp;также
+                    произведем расчёт доставки. В&nbsp;течении дня
+                    мы&nbsp;постараемся связаться с&nbsp;вами, сообщив финальную
+                    сумму заказа, а&nbsp;также способы его оплаты. Спаси Бог!
+                </p>
+                <button type="submit" id="form-button">
+                    Подтвердить данные
+                </button>
+            </form>
+        </div>
         <div class="content">
             <div class="content-about">
                 <div class="content-about-main">
@@ -961,7 +1022,8 @@
                 </div>
             </div>
         </div>
-        <script>
+
+        <!-- <script>
             // Load the IFrame Player API code asynchronously.
             var tag = document.createElement("script");
             tag.src = "https://www.youtube.com/player_api";
@@ -985,6 +1047,6 @@
                     },
                 });
             }
-        </script>
+        </script> -->
     </body>
 </html>
