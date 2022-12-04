@@ -12,28 +12,50 @@
             text-align: center;
         }
 
-        label,
-        span {
-            margin: 5px 0;
-        }
-        input,
-        textArea {
-            margin-bottom: 15px;
-            background-color: #ffffffc4;
-            border-radius: 3px;
-            line-height: 1.25;
-            padding: 3px;
+        div {
+            position: relative;
+            display: flex;
+            flex-direction: column;
 
-            &:focus-visible {
-                outline: $goldHeaders solid 2px;
-                outline-offset: 1.5px;
+            label,
+            span {
+                margin: 5px 0;
             }
 
-            &.error {
-                outline: red solid 2px;
-                outline-offset: 1.5px;
+            input,
+            textArea {
+                margin-bottom: 17px;
+                background-color: #ffffffc4;
+                border-radius: 3px;
+                line-height: 1.25;
+                padding: 3px;
+
+                &#books {
+                    width: 65px;
+                }
+
+                &#tel {
+                    margin-bottom: 38px;
+                }
+
+                &:focus-visible {
+                    outline: $goldHeaders solid 2px;
+                    outline-offset: 1.5px;
+                }
+
+                &.error {
+                    outline: red solid 2px;
+                    outline-offset: 1.5px;
+                }
             }
         }
+
+        .form-error {
+            position: absolute;
+            color: red;
+            bottom: -3px;
+        }
+
         p {
             text-align: center;
         }

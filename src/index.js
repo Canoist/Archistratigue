@@ -186,6 +186,6 @@ copyText.addEventListener("click", (e) => {
 
 formButton.addEventListener("click", (e) => {
     e.preventDefault();
-    validate(data);
-    console.log(data);
+    const isValidate = validate(data);
+    console.log(data, isValidate);
 });
