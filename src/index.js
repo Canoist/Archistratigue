@@ -14,7 +14,9 @@ import {
     copyText,
     formButton,
     formCoast,
+    modalWindow,
     nextButton,
+    orderButton,
     playButton,
     prevButton,
     progressContainer,
@@ -188,4 +190,11 @@ formButton.addEventListener("click", (e) => {
     e.preventDefault();
     const isValidate = validate(data);
     console.log(data, isValidate);
+    if (isValidate) {
+        modalWindow.classList.remove("active");
+    }
+});
+
+orderButton.addEventListener("click", (e) => {
+    modalWindow.classList.add("active");
 });

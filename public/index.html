@@ -16,78 +16,6 @@
         <title>Путь Архистратига</title>
     </head>
     <body>
-        <div class="modal">
-            <form>
-                <h4>
-                    Стоимость <nobr>1-го</nobr> экземпляра книги&nbsp;&mdash;
-                    400&nbsp;руб (без учета доставки)
-                </h4>
-                <div>
-                    <label for="books">Введите кол-во книг</label>
-                    <input
-                        type="number"
-                        name="books"
-                        id="books"
-                        min="1"
-                        value="1"
-                        required />
-
-                    <span>Стоимость: <span id="coast">400 руб.</span></span>
-                </div>
-
-                <div>
-                    <label for="dataName">ФИО получателя</label>
-                    <input
-                        type="text"
-                        minlength="3"
-                        name="dataName"
-                        id="dataName"
-                        required />
-                    <p class="form-error error-dataName">выыыы</p>
-                </div>
-
-                <div>
-                    <label for="adress">Адрес доставки:</label>
-                    <textarea
-                        type="text"
-                        name="adress"
-                        id="adress"
-                        minlength="12"
-                        required></textarea>
-                    <p class="form-error error-adress"></p>
-                </div>
-
-                <div>
-                    <label for="email">Ваша электронная почта: </label>
-                    <input type="email" name="email" id="email" required />
-                    <p class="form-error error-email"></p>
-                </div>
-
-                <div>
-                    <label for="tel">Телефон для связи: </label>
-                    <input
-                        type="tel"
-                        name="tel"
-                        id="tel"
-                        class="error"
-                        required
-                        minlength="10"
-                        maxlength="14" />
-                    <p class="form-error error-tel"></p>
-                </div>
-
-                <p>
-                    После получения вашей заявки мы&nbsp;проверим наличие
-                    необходимого <nobr>кол-ва</nobr> книг, а&nbsp;также
-                    произведем расчёт доставки. В&nbsp;течении дня
-                    мы&nbsp;постараемся связаться с&nbsp;вами, сообщив финальную
-                    сумму заказа, а&nbsp;также способы его оплаты. Спаси Бог!
-                </p>
-                <button type="submit" id="form-button">
-                    Подтвердить данные
-                </button>
-            </form>
-        </div>
         <div class="content">
             <div class="content-about">
                 <div class="content-about-main">
@@ -889,7 +817,9 @@
                                 <li>Памятка офицеру.</li>
                             </ul>
                         </div>
-                        <button type="button" class="btn">Заказать</button>
+                        <button type="button" class="btn" id="order">
+                            Заказать
+                        </button>
                     </div>
                 </div>
             </div>
@@ -1032,6 +962,79 @@
                     </p>
                 </div>
             </div>
+        </div>
+
+        <div class="modal">
+            <form>
+                <h4>
+                    Стоимость <nobr>1-го</nobr> экземпляра книги&nbsp;&mdash;
+                    400&nbsp;руб (без учета доставки)
+                </h4>
+                <div>
+                    <label for="books">Введите кол-во книг</label>
+                    <input
+                        type="number"
+                        name="books"
+                        id="books"
+                        min="1"
+                        value="1"
+                        required />
+
+                    <span>Стоимость: <span id="coast">400 руб.</span></span>
+                </div>
+
+                <div>
+                    <label for="dataName">ФИО получателя</label>
+                    <input
+                        type="text"
+                        minlength="3"
+                        name="dataName"
+                        id="dataName"
+                        required />
+                    <p class="form-error error-dataName">выыыы</p>
+                </div>
+
+                <div>
+                    <label for="adress">Адрес доставки:</label>
+                    <textarea
+                        type="text"
+                        name="adress"
+                        id="adress"
+                        minlength="12"
+                        required></textarea>
+                    <p class="form-error error-adress"></p>
+                </div>
+
+                <div>
+                    <label for="email">Ваша электронная почта: </label>
+                    <input type="email" name="email" id="email" required />
+                    <p class="form-error error-email"></p>
+                </div>
+
+                <div>
+                    <label for="tel">Телефон для связи: </label>
+                    <input
+                        type="tel"
+                        name="tel"
+                        id="tel"
+                        class="error"
+                        required
+                        minlength="10"
+                        maxlength="14" />
+                    <p class="form-error error-tel"></p>
+                </div>
+
+                <p>
+                    После получения вашей заявки мы&nbsp;проверим наличие
+                    необходимого <nobr>кол-ва</nobr> книг, а&nbsp;также
+                    произведем расчёт доставки. В&nbsp;течении дня
+                    мы&nbsp;постараемся связаться с&nbsp;вами, сообщив финальную
+                    сумму заказа, а&nbsp;также способы его оплаты. Спаси Бог!
+                </p>
+                <button type="submit" id="form-button">
+                    Подтвердить данные
+                </button>
+            </form>
         </div>
 
         <!-- <script>

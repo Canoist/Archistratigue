@@ -31,7 +31,7 @@ export default function validate(data) {
     if (!emailRegExp.test(data.email)) {
         formEmail.classList.add("error");
         errEmail.style.display = "block";
-        errEmail.innerText = "Не правильно введена почта";
+        errEmail.innerText = "Проверьте правильность ввода почты";
         errorsCount++;
     }
 

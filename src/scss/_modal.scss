@@ -1,6 +1,24 @@
 @import "./variables";
 
 .modal {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 100%;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: #6d022e;
+    overflow: auto;
+    transition: 0.5s ease;
+    z-index: 1000;
+
+    &.active {
+        top: 0;
+        opacity: 1;
+    }
+
     form {
         display: flex;
         flex-direction: column;
@@ -24,7 +42,7 @@
 
             input,
             textArea {
-                margin-bottom: 17px;
+                margin-bottom: 20px;
                 background-color: #ffffffc4;
                 border-radius: 3px;
                 line-height: 1.25;
@@ -35,7 +53,7 @@
                 }
 
                 &#tel {
-                    margin-bottom: 38px;
+                    margin-bottom: 45px;
                 }
 
                 &:focus-visible {
