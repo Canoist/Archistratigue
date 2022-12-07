@@ -23,3 +23,5 @@ export const errAdress = document.querySelector(".error-adress");
 export const errEmail = document.querySelector(".error-email");
 export const errTel = document.querySelector(".error-tel");
 export const modalWindow = document.querySelector(".modal");
+export const closeModalButton = document.querySelector(".close-button");
+

@@ -4,8 +4,13 @@ import nodemailer from "nodemailer";
 
 dotenv.config();
 
-const { EMAIL_HOST, EMAIL_HOST_PASSWORD, EMAIL_HOST_USER, EMAIL_PORT } =
-    process.env;
+const {
+    EMAIL_HOST,
+    EMAIL_HOST_PASSWORD,
+    EMAIL_HOST_USER,
+    EMAIL_PORT,
+    EMAIL_OF_RECIEVER,
+} = process.env;
 
 class Mail {
     #transporter = null;
@@ -30,7 +35,7 @@ class Mail {
         try {
             const info = await this.#transporter.sendMail({
                 from: sender,
-                to: "lichkun.leonid@yandex.ru",
+                to: EMAIL_OF_RECIEVER,
                 subject: "Поступил новый заказ",
                 text: data.message + data.about,
                 html: `<b>${data.message}</b>

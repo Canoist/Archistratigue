@@ -19,6 +19,22 @@
         opacity: 1;
     }
 
+    .close-button {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 19px;
+        padding: 10px 14px;
+        border-radius: 5px;
+        text-transform: uppercase;
+        background-color: red;
+        box-shadow: 0 0 2px red;
+        cursor: pointer;
+    }
+
     form {
         display: flex;
         flex-direction: column;
@@ -77,9 +93,16 @@
         p {
             text-align: center;
         }
-        button {
+        #form-button {
             margin: 25px auto;
             @extend %btn;
+        }
+
+        @media screen and (max-width: 515px) {
+            padding-top: 50px;
+        }
+        @media screen and (min-width: 1024px) {
+            width: 400px;
         }
     }
 }

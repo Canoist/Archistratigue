@@ -9,6 +9,7 @@ import generateSound from "./generateSound";
 import setCurrentTime from "./setCurrentTime";
 import setActiveTrack from "./setActiveTrack";
 import showLoader from "./showLoader";
+import "./formHandlers";
 import {
     controlButton,
     copyText,
@@ -189,7 +190,6 @@ copyText.addEventListener("click", (e) => {
 formButton.addEventListener("click", (e) => {
     e.preventDefault();
     const isValidate = validate(data);
-    console.log(data, isValidate);
     if (isValidate) {
         modalWindow.classList.remove("active");
     }
