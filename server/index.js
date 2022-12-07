@@ -11,19 +11,20 @@ import bodyParser from "body-parser";
 
 import Mail from "./mail.js";
 import chalk from "chalk";
+import cors from "cors";
 
 const PORT = process.env.PORT || 8000;
 
 const app = express();
 
 app.use(bodyParser.json());
+app.use(cors());
 
-app.get("/", (req, res) =>
-    res.send(`Requested from ${req.hostname} : <h1>Hello World</h1>`)
-);
+app.get("/", (req, res) => res.send(`It's works`));
 
 app.post("/mail", async (req, res) => {
     const { email, ...rest } = req.body;
+    console.log(req.body);
     return res.json({ result: await Mail.send(email, rest) });
 });
 

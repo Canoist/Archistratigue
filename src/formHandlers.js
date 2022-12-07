@@ -5,14 +5,32 @@ import {
     modalWindow,
     orderButton,
 } from "./elements";
-import data from "./getDataForm";
+import dataForm from "./getDataForm";
 import validate from "./validate";
+import axios from "axios";
 
-formButton.addEventListener("click", (e) => {
+formButton.addEventListener("click", async (e) => {
     e.preventDefault();
-    const isValidate = validate(data);
-    if (isValidate) {
-        closeModalWindow();
+    formButton.textContent = "Отправляю данные...";
+    formButton.setAttribute("disabled", true);
+    try {
+        const { code } = await axios.get("http://localhost:8000");
+        console.log(code);
+        console.log(dataForm);
+        const isValidate = validate(dataForm);
+        if (isValidate) {
+            const { data } = await axios.post(
+                "http://localhost:8000/mail",
+                dataForm
+            );
+            console.log(data);
+            closeModalWindow();
+        }
+    } catch (error) {
+        console.log(error);
+    } finally {
+        formButton.textContent = "Подтвердить данные";
+        formButton.removeAttribute("disabled");
     }
 });
 

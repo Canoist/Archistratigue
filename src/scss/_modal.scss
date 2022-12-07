@@ -96,6 +96,14 @@
         #form-button {
             margin: 25px auto;
             @extend %btn;
+
+            &:disabled {
+                cursor: wait;
+                &:hover {
+                    box-shadow: 0px 4px 16px rgba(255, 181, 0, 0.47);
+                    background-color: $goldText;
+                }
+            }
         }
 
         @media screen and (max-width: 515px) {
