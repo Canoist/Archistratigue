@@ -10,6 +10,7 @@ const {
     EMAIL_HOST_USER,
     EMAIL_PORT,
     EMAIL_OF_RECIEVER,
+    EMAIL_OF_SENDER,
 } = process.env;
 
 class Mail {
@@ -31,16 +32,31 @@ class Mail {
         });
     }
 
-    async send(sender, data) {
+    async send(data) {
         try {
             const info = await this.#transporter.sendMail({
-                from: sender,
+                from: EMAIL_OF_SENDER,
                 to: EMAIL_OF_RECIEVER,
                 subject: "Поступил новый заказ",
-                text: data.message + data.about,
-                html: `<b>${data.message}</b>
-                <p>${data.about}</p>`,
+                text: `
+                Поступил новый заказ книги «На войне»
+                Количество книг: ${data.amount}
+                ФИО получателя: ${data.dataName}
+                Адрес доставки: ${data.adress}
+                Email: ${data.email}
+                Контактный телефон: ${data.tel}`,
+                html: `
+                <h3>Поступил новый заказ книги «На войне»</h3>
+                <p>Количество книг: <b>${data.amount}</b></p>
+                <p>ФИО получателя: <b>${data.dataName}</b></p>
+                <p>Адрес доставки: <b>${data.adress}</b></p>
+                <p>Email: <b>${data.email}</b></p>
+                <p>Контактный телефон: <b>${data.tel}</b></p>,
+                <p>Стоимость без учета доставки: <b>${
+                    data.amount * 400
+                } руб.</b></p>`,
             });
+            console.log(info);
             return info.messageId;
         } catch (e) {
             return e;

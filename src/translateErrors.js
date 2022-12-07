@@ -10,3 +10,5 @@ const translateErrors = (message) => {
             break;
     }
 };
+
+export default translateErrors;

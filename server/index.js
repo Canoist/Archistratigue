@@ -23,9 +23,8 @@ app.use(cors());
 app.get("/", (req, res) => res.send(`It's works`));
 
 app.post("/mail", async (req, res) => {
-    const { email, ...rest } = req.body;
-    console.log(req.body);
-    return res.json({ result: await Mail.send(email, rest) });
+    const data = req.body;
+    return res.json({ result: await Mail.send(data) });
 });
 
 app.listen(PORT, () => {
