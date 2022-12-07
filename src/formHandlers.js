@@ -1,5 +1,11 @@
 import closeModalWindow from "./closeModalWindow";
-import { closeModalButton, formButton, orderButton } from "./elements";
+import {
+    closeModalButton,
+    formButton,
+    modalWindow,
+    orderButton,
+} from "./elements";
+import data from "./getDataForm";
 import validate from "./validate";
 
 formButton.addEventListener("click", (e) => {
@@ -11,7 +17,7 @@ formButton.addEventListener("click", (e) => {
 });
 
 orderButton.addEventListener("click", (e) => {
-    closeModalWindow();
+    modalWindow.classList.add("active");
 });
 
 closeModalButton.addEventListener("click", (e) => {

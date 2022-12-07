@@ -13,20 +13,13 @@ import "./formHandlers";
 import {
     controlButton,
     copyText,
-    formButton,
-    formCoast,
-    modalWindow,
     nextButton,
-    orderButton,
     playButton,
     prevButton,
     progressContainer,
     songList,
     songProgress,
 } from "./elements";
-
-import data from "./getDataForm";
-import validate from "./validate";
 
 Swiper.use([Autoplay, Pagination, EffectFade]);
 
@@ -185,16 +178,4 @@ progressContainer.addEventListener("touchend", (e) => {
 
 copyText.addEventListener("click", (e) => {
     window.navigator.clipboard.writeText(copyText.innerText);
-});
-
-formButton.addEventListener("click", (e) => {
-    e.preventDefault();
-    const isValidate = validate(data);
-    if (isValidate) {
-        modalWindow.classList.remove("active");
-    }
-});
-
-orderButton.addEventListener("click", (e) => {
-    modalWindow.classList.add("active");
 });
