@@ -6,6 +6,10 @@
         padding-bottom: 72px;
     }
 
+    .swiper-video {
+        padding-bottom: 30px;
+    }
+
     p {
         margin-bottom: 39px;
         @media screen and (max-width: 1024px) {
@@ -35,32 +39,4 @@
             }
         }
     }
-
-    // .content-video-mobile {
-    //     display: none;
-
-    //     @media screen and (max-width: 500px) {
-    //         display: inline-block;
-    //     }
-    // }
-
-    // .content-video-mobile-horizontal {
-    //     display: none;
-
-    //     @media screen and (max-width: 1024px) {
-    //         display: inline-block;
-    //     }
-
-    //     @media screen and (max-width: 500px) {
-    //         display: none;
-    //     }
-    // }
-
-    // .content-video-desktop {
-    //     display: inline-block;
-
-    //     @media screen and (max-width: 1024px) {
-    //         display: none;
-    //     }
-    // }
 }

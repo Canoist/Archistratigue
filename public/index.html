@@ -33,43 +33,48 @@
         </div>
         <div class="content">
             <div class="content-video">
-                <p>
-                    Отец Дмитрий Василенков: КАК ОСТАТЬСЯ ЧЕЛОВЕКОМ
-                    НА&nbsp;ВОЙНЕ?
-                </p>
-                <div class="video-wrapper">
-                    <div class="video-wrapper-container">
-                        <div id="ytplayer"></div>
+                <div class="swiper swiper-video">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <p>
+                                Отец Дмитрий Василенков: КАК ОСТАТЬСЯ ЧЕЛОВЕКОМ
+                                НА&nbsp;ВОЙНЕ?
+                            </p>
+                            <div class="video-wrapper">
+                                <div class="video-wrapper-container">
+                                    <iframe
+                                        width="640"
+                                        height="360"
+                                        src="https://www.youtube.com/embed/x74TVyjrpA0"
+                                        title="YouTube video player"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <p>
+                                Протоиерей Андрей Ткачёв рассказывает
+                                о&nbsp;книге «Путь Архистратига»
+                            </p>
+                            <div class="video-wrapper">
+                                <div class="video-wrapper-container">
+                                    <iframe
+                                        width="640"
+                                        height="360"
+                                        src="https://www.youtube.com/embed/SyWOlcuFHDY"
+                                        title="YouTube video player"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <div
+                        class="swiper-pagination swiper-pagination-video"></div>
                 </div>
-                <!-- <iframe
-                    class="content-video-desktop"
-                    src="https://vk.com/video_ext.php?oid=-75679763&id=456276576&hash=7f5676dce3f4a922&hd=1"
-                    width="640"
-                    height="360"
-                    allow="autoplay; encrypted-media; fullscreen; picture-in-picture;"
-                    frameborder="0"
-                    allowfullscreen
-                    title="О книге">
-                </iframe>
-                <iframe
-                    class="content-video-mobile-horizontal"
-                    src="https://vk.com/video_ext.php?oid=-75679763&id=456276576&hash=7f5676dce3f4a922"
-                    width="426"
-                    height="240"
-                    allow="autoplay; encrypted-media; fullscreen; picture-in-picture;"
-                    frameborder="0"
-                    allowfullscreen
-                    title="О книге"></iframe>
-                <iframe
-                    class="content-video-mobile"
-                    src="https://vk.com/video_ext.php?oid=-75679763&id=456276576&hash=7f5676dce3f4a922"
-                    width="480"
-                    height="270"
-                    allow="autoplay; encrypted-media; fullscreen; picture-in-picture;"
-                    frameborder="0"
-                    allowfullscreen
-                    title="О книге"></iframe> -->
             </div>
         </div>
         <div class="content">
@@ -826,7 +831,7 @@
         </div>
         <div class="content">
             <div class="content-slider">
-                <div class="swiper">
+                <div class="swiper swiper-image">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <img
@@ -901,7 +906,8 @@
                                 alt="picture" />
                         </div>
                     </div>
-                    <div class="swiper-pagination"></div>
+                    <div
+                        class="swiper-pagination swiper-pagination-image"></div>
                 </div>
                 <div class="content-slider-content">
                     <p>
@@ -1036,31 +1042,5 @@
                 </button>
             </form>
         </div>
-
-        <script>
-            // Load the IFrame Player API code asynchronously.
-            var tag = document.createElement("script");
-            tag.src = "https://www.youtube.com/player_api";
-            var firstScriptTag = document.getElementsByTagName("script")[0];
-            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-            // Replace the 'ytplayer' element with an <iframe> and
-            // YouTube player after the API code downloads.
-            // var player;
-            // function onYouTubePlayerAPIReady() {
-            //     player = new YT.Player("ytplayer", {
-            //         height: "360px",
-            //         width: "640px",
-            //         playerVars: {
-            //             autoplay: 0,
-            //         },
-            //         events: {
-            //             onReady: () => {
-            //                 player.cuePlaylist(["x74TVyjrpA0", "SyWOlcuFHDY"]);
-            //             },
-            //         },
-            //     });
-            // }
-        </script>
     </body>
 </html>
