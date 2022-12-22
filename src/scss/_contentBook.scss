@@ -1,11 +1,11 @@
 @import "./variables";
 
 .content-book {
-    padding: 30px 0 50px;
+    padding: 30px 0 0;
 
     .content-book-header {
-        width: 390px;
-        margin: 0 auto;
+        width: 430px;
+        margin: 0 auto 15px;
         text-align: left;
 
         @media screen and (max-width: 1024px) {

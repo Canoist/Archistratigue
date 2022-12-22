@@ -20,11 +20,3 @@ const swiper = new Swiper(".swiper-image", {
         waitForTransition: false,
     },
 });
-
-const swiperVideo = new Swiper(".swiper-video", {
-    loop: true,
-    pagination: {
-        el: ".swiper-pagination-video",
-        clickable: true,
-    },
-});
