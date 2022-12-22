@@ -1,11 +1,3 @@
-/**
- * Example:
- * EMAIL_HOST=smtp.sendgrid.net
- * EMAIL_HOST_PASSWORD=?
- * EMAIL_HOST_USER=apikey
- * EMAIL_PORT=587
- */
-
 import express from "express";
 import bodyParser from "body-parser";
 
@@ -24,7 +16,15 @@ app.get("/", (req, res) => res.send(`It's works`));
 
 app.post("/mail", async (req, res) => {
     const data = req.body;
-    return res.json({ result: await Mail.send(data) });
+    try {
+        const result = await Mail.send(data);
+        return res.json({ result });
+    } catch (error) {
+        res.status(500).json({
+            message:
+                "Ошибка на сервере, напишите нам, пожалуйста: archistratig230@gmail.com",
+        });
+    }
 });
 
 app.listen(PORT, () => {

@@ -56,10 +56,10 @@ class Mail {
                     data.amount * 400
                 } руб.</b></p>`,
             });
-            console.log(info);
             return info.messageId;
         } catch (e) {
-            return e;
+            console.log(chalk.bgRedBright(e));
+            throw e;
         }
     }
 }

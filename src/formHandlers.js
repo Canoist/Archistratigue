@@ -21,21 +21,14 @@ formButton.addEventListener("click", async (e) => {
         errTel.style.display = "none";
 
         try {
-            const { data } = await axios.post(
-                "http://localhost:8000/mail",
-                dataForm
-            );
-            if (data?.result?.code === "EDNS") {
-                const message = translateErrors("Internal Server Error");
-                errTel.style.display = "block";
-                errTel.innerText = message;
-            } else {
-                closeModalWindow();
-            }
-            console.log(data);
+            await axios.post("http://localhost:8000/mail", dataForm);
+            closeModalWindow();
         } catch (error) {
-            console.log(error);
-            const message = translateErrors(error.message);
+            const message = translateErrors(
+                error?.response?.data?.message
+                    ? error.response.data.message
+                    : error.message
+            );
             errTel.style.display = "block";
             errTel.innerText = message;
         } finally {

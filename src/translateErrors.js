@@ -4,10 +4,10 @@ const translateErrors = (message) => {
             return "Проблема с соединением, попробуйте позже";
 
         case "Internal Server Error":
-            return "Внутренняя ошибка сервера. Свяжитесь с тех. поддержкой";
+            return "Внутренняя ошибка сервера. Напишите нам: archistratig230@gmail.com";
 
         default:
-            break;
+            return "Внутренняя ошибка. Напишите нам: archistratig230@gmail.com";
     }
 };
 
