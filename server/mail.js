@@ -56,6 +56,31 @@ class Mail {
                     data.amount * 400
                 } руб.</b></p>`,
             });
+            await this.#transporter.sendMail({
+                from: EMAIL_OF_SENDER,
+                to: data.email,
+                subject: `Заказ книги «На войне»`,
+                text: `
+                Поступил новый заказ книги «На войне»
+                В ближайшее время наш представитель свяжется с Вами.
+
+                Данные о вашем заказе:
+                Количество книг: ${data.amount}
+                ФИО получателя: ${data.dataName}
+                Адрес доставки: ${data.adress}
+                Стоимость без учета доставки: <b>${data.amount * 400} руб.`,
+                html: `
+                <h3>Поступил новый заказ книги «На войне»</h3>
+                <h4>В ближайшее время наш представитель свяжется с Вами для уточнения заказа.</h4>
+
+                <p>Данные о вашем заказе:</p>
+                <p>Количество книг: <b>${data.amount}</b></p>
+                <p>ФИО получателя: <b>${data.dataName}</b></p>
+                <p>Адрес доставки: <b>${data.adress}</b></p>
+                <p>Стоимость без учета доставки: <b>${
+                    data.amount * 400
+                } руб.</b></p>`,
+            });
             return info.messageId;
         } catch (e) {
             console.log(chalk.bgRedBright(e));
