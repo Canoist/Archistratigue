@@ -10,6 +10,7 @@ import dataForm from "./getDataForm";
 import validate from "./validate";
 import axios from "axios";
 import translateErrors from "./translateErrors";
+import toast from "./toastify";
 
 formButton.addEventListener("click", async (e) => {
     e.preventDefault();
@@ -23,6 +24,7 @@ formButton.addEventListener("click", async (e) => {
         try {
             await axios.post("http://localhost:8000/mail", dataForm);
             closeModalWindow();
+            toast.showToast();
         } catch (error) {
             const message = translateErrors(
                 error?.response?.data?.message
