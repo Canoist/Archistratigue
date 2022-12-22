@@ -6,6 +6,8 @@
 @import "./contentAction";
 @import "./contentSlider";
 @import "./contentFooter";
+@import "./contentBook";
+@import "./modal";
 @import "swiper/scss/effect-fade";
 @import "swiper/scss/autoplay";
 @import "swiper/scss/pagination";
@@ -33,7 +35,7 @@
             height: 147px;
             right: 0;
             z-index: 5;
-            top: 223px;
+            bottom: -25px;
             background: url("../../public/assets/ribbon.png") 100% 100%
                 no-repeat;
             @media screen and (max-width: 1024px) {

@@ -1,15 +1,28 @@
+@import "./variables";
+
 .content-footer {
     margin: 0 auto;
-    padding: 50px 0 46px;
-    width: 310px;
+    padding: 50px 5px 46px;
+    max-width: 370px;
 
     @media screen and (max-width: 1024px) {
-        padding: 38px 0 66px;
+        padding: 38px 5px 66px;
+    }
+
+    .copy {
+        display: inline-block;
+        color: $goldHeaders;
+
+        &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
     }
 
     svg {
         margin-top: 42.5px;
         margin-bottom: 48px;
+
         @media screen and (max-width: 1024px) {
             margin-top: 48px;
         }
@@ -34,6 +47,25 @@
 
         .content-footer-lic {
             margin-top: 1rem;
+        }
+    }
+    .content-footer-mailto {
+        display: inline-block;
+        margin-top: 15px;
+
+        a {
+            color: $goldHeaders;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            font-size: 12px;
+            line-height: 16px;
+
+            width: 220px;
         }
     }
 }
