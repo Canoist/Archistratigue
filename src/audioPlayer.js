@@ -125,28 +125,40 @@ progressContainer.addEventListener("click", (e) => {
     }
 });
 
-progressContainer.addEventListener("touchstart", (e) => {
-    if (sound.playing()) {
-        toggleButton();
-        sound.pause();
-    }
-});
+progressContainer.addEventListener(
+    "touchstart",
+    (e) => {
+        if (sound.playing()) {
+            toggleButton();
+            sound.pause();
+        }
+    },
+    { passive: true }
+);
 
-progressContainer.addEventListener("touchmove", (e) => {
-    const { value } = e.target;
-    songProgress.value = value / 100;
-    const formattedDuration = intervalToDuration({
-        start: 0,
-        end: ((sound.duration() * value) / 100) * 1000,
-    });
-    setCurrentTime(formattedDuration);
-});
+progressContainer.addEventListener(
+    "touchmove",
+    (e) => {
+        const { value } = e.target;
+        songProgress.value = value / 100;
+        const formattedDuration = intervalToDuration({
+            start: 0,
+            end: ((sound.duration() * value) / 100) * 1000,
+        });
+        setCurrentTime(formattedDuration);
+    },
+    { passive: true }
+);
 
-progressContainer.addEventListener("touchend", (e) => {
-    const { value } = e.target;
-    sound.seek((sound.duration() * value) / 100);
-    if (playButton.classList.contains("player-play-pause-active")) {
-        toggleButton();
-        sound.play();
-    }
-});
+progressContainer.addEventListener(
+    "touchend",
+    (e) => {
+        const { value } = e.target;
+        sound.seek((sound.duration() * value) / 100);
+        if (playButton.classList.contains("player-play-pause-active")) {
+            toggleButton();
+            sound.play();
+        }
+    },
+    { passive: true }
+);
