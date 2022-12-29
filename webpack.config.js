@@ -5,7 +5,7 @@ module.exports = {
     mode: "development",
     entry: "./src/index.js",
     output: {
-        filename: "bundle.js",
+        filename: "[name].js",
         path: path.resolve(__dirname, "build"),
     },
     devServer: {
@@ -69,7 +69,7 @@ module.exports = {
                 test: /\.webp$/i,
                 type: "asset/resource",
                 generator: {
-                    filename: "[name].[ext]",
+                    filename: "[name][ext]",
                 },
             },
             {
@@ -95,4 +95,7 @@ module.exports = {
             template: "./public/index.html",
         }),
     ],
+    optimization: {
+        runtimeChunk: "single",
+    },
 };
