@@ -11,7 +11,7 @@ import validate from "./validate";
 import axios from "axios";
 import translateErrors from "./translateErrors";
 import toast from "./toastify";
-import configFile from "../config.json";
+import configFile from "./config.json";
 
 formButton.addEventListener("click", async (e) => {
     e.preventDefault();
