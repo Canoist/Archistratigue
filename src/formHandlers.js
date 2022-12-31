@@ -11,6 +11,7 @@ import validate from "./validate";
 import axios from "axios";
 import translateErrors from "./translateErrors";
 import toast from "./toastify";
+import configFile from "../config.json";
 
 formButton.addEventListener("click", async (e) => {
     e.preventDefault();
@@ -22,7 +23,7 @@ formButton.addEventListener("click", async (e) => {
         errTel.style.display = "none";
 
         try {
-            await axios.post("http://localhost:8000/mail", dataForm);
+            await axios.post(`${configFile.appEndPoint}/mail`, dataForm);
             closeModalWindow();
             toast.showToast();
         } catch (error) {
