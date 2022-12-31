@@ -21,9 +21,9 @@ if (process.env.NODE_ENV === "production") {
     });
 }
 
-app.get("/", (req, res) => res.send(`It's works`));
+app.get("/api", (req, res) => res.send(`It's works`));
 
-app.post("/mail", async (req, res) => {
+app.post("/api/mail", async (req, res) => {
     const data = req.body;
     try {
         const result = await Mail.send(data);
