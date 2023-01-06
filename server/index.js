@@ -12,7 +12,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get("/", (req, res) => res.send(`It's works`));
+app.get("/mail", (req, res) => res.send(`It's works`));
 
 app.post("/mail", async (req, res) => {
     const data = req.body;
