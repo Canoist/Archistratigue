@@ -69,7 +69,7 @@ module.exports = {
                 test: /\.webp$/i,
                 type: "asset/resource",
                 generator: {
-                    filename: "[name].[ext]",
+                    filename: "[name][ext]",
                 },
             },
             {

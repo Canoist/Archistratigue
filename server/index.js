@@ -12,7 +12,16 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get("/mail", (req, res) => res.send(`It's works`));
+if (process.env.NODE_ENV === "production") {
+    app.use("/", express.static(__dirname));
+
+    const indexPath = path.join(__dirname, "index.html");
+    app.get("*", (req, res) => {
+        res.sendFile(indexPath);
+    });
+}
+
+// app.get("/mail", (req, res) => res.send(`It's works`));
 
 app.post("/mail", async (req, res) => {
     const data = req.body;

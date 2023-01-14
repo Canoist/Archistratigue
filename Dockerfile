@@ -1,3 +1,17 @@
+FROM node:14 as client
+
+WORKDIR /app/client
+
+COPY package.json /app/client
+
+RUN npm install
+
+COPY . /app/client
+
+RUN npm run build
+
+# ---------------------------
+
 FROM node:16-alpine
 
 WORKDIR /app
@@ -8,6 +22,8 @@ RUN npm install
 
 COPY server /app
 
-EXPOSE 8000
+COPY --from=client app/client/build /app
+
+EXPOSE 8080
 
 CMD ["npm","start"]

@@ -23,11 +23,7 @@ formButton.addEventListener("click", async (e) => {
         errTel.style.display = "none";
 
         try {
-            await axios.post(`${configFile.appEndPoint}/mail`, dataForm, {
-                proxy: {
-                    port: 8000,
-                },
-            });
+            await axios.post(`${configFile.appEndPoint}/mail`, dataForm);
             closeModalWindow();
             toast.showToast();
         } catch (error) {
