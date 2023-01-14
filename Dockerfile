@@ -1,4 +1,4 @@
-FROM node:14 as client
+FROM node:16 as client
 
 WORKDIR /app/client
 
@@ -22,8 +22,8 @@ RUN npm install
 
 COPY server /app
 
-COPY --from=client app/client/build /app
+COPY --from=client app/client/build /app/client
 
-EXPOSE 8080
+EXPOSE 8000
 
 CMD ["npm","start"]

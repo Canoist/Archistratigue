@@ -1,9 +1,13 @@
 import express from "express";
 import bodyParser from "body-parser";
-
 import Mail from "./mail.js";
 import chalk from "chalk";
 import cors from "cors";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const PORT = process.env.PORT || 8000;
 
@@ -13,15 +17,14 @@ app.use(bodyParser.json());
 app.use(cors());
 
 if (process.env.NODE_ENV === "production") {
-    app.use("/", express.static(__dirname));
+    app.use("/", express.static(path.join(__dirname, "client")));
 
-    const indexPath = path.join(__dirname, "index.html");
+    const indexPath = path.join(__dirname, "client", "index.html");
+
     app.get("*", (req, res) => {
         res.sendFile(indexPath);
     });
 }
-
-// app.get("/mail", (req, res) => res.send(`It's works`));
 
 app.post("/mail", async (req, res) => {
     const data = req.body;
