@@ -1,15 +1,5 @@
 import closeModalWindow from "./closeModalWindow";
-import {
-    closeModalButton,
-    modalWindow,
-    orderButton,
-} from "./elements";
-
-
-
-orderButton.addEventListener("click", (e) => {
-    modalWindow.classList.add("active");
-});
+import { closeModalButton } from "./elements";
 
 closeModalButton.addEventListener("click", (e) => {
     closeModalWindow();

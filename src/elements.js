@@ -11,17 +11,5 @@ export const songList = document.querySelectorAll(".song");
 export const playerLeft = document.querySelector("#player-left");
 export const orderButton = document.querySelector("#order");
 export const copyText = document.querySelector(".copy");
-export const formBooks = document.querySelector("#books");
-export const formDataName = document.querySelector("#dataName");
-export const formAdress = document.querySelector("#adress");
-export const formEmail = document.querySelector("#email");
-export const formTel = document.querySelector("#tel");
-export const formButton = document.querySelector("#form-button");
-export const formCoast = document.querySelector("#coast");
-export const errDataName = document.querySelector(".error-dataName");
-export const errAdress = document.querySelector(".error-adress");
-export const errEmail = document.querySelector(".error-email");
-export const errTel = document.querySelector(".error-tel");
 export const modalWindow = document.querySelector(".modal");
 export const closeModalButton = document.querySelector(".close-button");
-
