@@ -13,6 +13,7 @@
     overflow: auto;
     transition: 0.5s ease;
     z-index: 1000;
+    padding: 30px 5px;
 
     &.active {
         top: 0;
@@ -21,7 +22,7 @@
 
     .close-button {
         position: absolute;
-        right: 5px;
+        right: 35px;
         top: 25px;
         font-family: "Open Sans", sans-serif;
         font-weight: 700;
@@ -40,85 +41,8 @@
         }
     }
 
-    form {
-        display: flex;
-        flex-direction: column;
-        width: 300px;
-        margin: auto;
-        padding: 30px 0;
-
-        h4 {
-            text-align: center;
-        }
-
-        div {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-
-            label,
-            span {
-                margin: 5px 0;
-            }
-
-            input,
-            textArea {
-                margin-bottom: 26px;
-                background-color: #ffffffc4;
-                border-radius: 3px;
-                line-height: 1.25;
-                padding: 3px;
-                width: 100% !important;
-
-                &#books {
-                    width: 65px;
-                }
-
-                &#tel {
-                    margin-bottom: 45px;
-                }
-
-                &:focus-visible {
-                    outline: $goldHeaders solid 2px;
-                    outline-offset: 1.5px;
-                }
-
-                &.error {
-                    outline: red solid 2px;
-                    outline-offset: 1.5px;
-                }
-            }
-        }
-
-        .form-error {
-            position: absolute;
-            color: red;
-            bottom: 0;
-            text-shadow: 0 0 15px white;
-        }
-
-        p {
-            margin-top: 15px;
-            text-align: center;
-        }
-        #form-button {
-            margin: 25px auto;
-            @extend %btn;
-
-            &:disabled {
-                cursor: wait;
-                &:hover {
-                    box-shadow: 0px 4px 16px rgba(255, 181, 0, 0.47);
-                    background-color: $goldText;
-                }
-            }
-        }
-
-        @media screen and (max-width: 515px) {
-            padding-top: 50px;
-        }
-        @media screen and (min-width: 1024px) {
-            width: 400px;
-        }
+    .iframe-wrapper {
+        max-width: 640px;
+        margin: 0 auto;
     }
 }
