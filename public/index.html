@@ -978,75 +978,12 @@
 
         <div class="modal">
             <button type="button" class="close-button">Закрыть</button>
-            <form>
-                <h4>
-                    Стоимость <nobr>1-го</nobr> экземпляра книги&nbsp;&mdash;
-                    400&nbsp;руб (без учета доставки)
-                </h4>
-                <div>
-                    <label for="books">Введите кол-во книг</label>
-                    <input
-                        type="number"
-                        name="books"
-                        id="books"
-                        min="1"
-                        value="1"
-                        required />
-
-                    <span>Стоимость: <span id="coast">400 руб.</span></span>
-                </div>
-
-                <div>
-                    <label for="dataName">ФИО получателя</label>
-                    <input
-                        type="text"
-                        minlength="3"
-                        name="dataName"
-                        id="dataName"
-                        required />
-                    <p class="form-error error-dataName"></p>
-                </div>
-
-                <div>
-                    <label for="adress">Адрес доставки:</label>
-                    <textarea
-                        type="text"
-                        name="adress"
-                        id="adress"
-                        minlength="12"
-                        required></textarea>
-                    <p class="form-error error-adress"></p>
-                </div>
-
-                <div>
-                    <label for="email">Ваша электронная почта: </label>
-                    <input type="email" name="email" id="email" required />
-                    <p class="form-error error-email"></p>
-                </div>
-
-                <div>
-                    <label for="tel">Телефон для связи: </label>
-                    <input
-                        type="tel"
-                        name="tel"
-                        id="tel"
-                        required
-                        minlength="10"
-                        maxlength="15" />
-                    <p class="form-error error-tel"></p>
-                </div>
-
-                <p>
-                    После получения вашей заявки мы&nbsp;проверим наличие
-                    необходимого <nobr>кол-ва</nobr> книг, а&nbsp;также
-                    произведем расчёт доставки. В&nbsp;течении дня
-                    мы&nbsp;постараемся связаться с&nbsp;вами, сообщив финальную
-                    сумму заказа, а&nbsp;также способы его оплаты. Спаси Бог!
-                </p>
-                <button type="submit" id="form-button">
-                    Подтвердить данные
-                </button>
-            </form>
+            <iframe
+                src="https://forms.yandex.ru/cloud/63cbe05ec09c0240361e83fe/?iframe=1"
+                frameborder="0"
+                name="ya-form-63cbe05ec09c0240361e83fe"
+                width="100%"></iframe>
         </div>
+        <script src="https://yastatic.net/s3/frontend/forms/_/embed.js"></script>
     </body>
 </html>
