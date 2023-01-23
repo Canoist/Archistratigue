@@ -9,19 +9,6 @@
 5. Webpack
 6. Swiper
 7. Howler
-8. Toastify-JS
-9. NodeJS
-10. Express
-11. Nodemailer
-12. Chalk
-
-## Требования
-
-Для запуска проекта необходимы следующие программы:
-
--   Git
--   NodeJS
--   Docker
 
 ## Скачивание репозитория
 
@@ -37,18 +24,10 @@ git clone https://github.com/Canoist/Archistratigue.git
 cd .\Archistratigue\
 ```
 
-Собрать образ с помощью Docker и запустить контейнер.
-
 ## Запуск проекта в режиме разработки
 
 Для запуска проекта в режиме разработке необходимо набрать в консоли команду
 
 ```
 npm run serve
-```
-
-В другой консоли перейти в папку с сервером и выполнить команду
-
-```
-npm run dev
 ```
