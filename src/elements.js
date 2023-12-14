@@ -9,7 +9,6 @@ export const songProgress = document.querySelector("#song-buffered-progress");
 export const loader = document.querySelector("#loader");
 export const songList = document.querySelectorAll(".song");
 export const playerLeft = document.querySelector("#player-left");
-export const orderButton = document.querySelector("#order");
 export const copyText = document.querySelector(".copy");
 export const modalWindow = document.querySelector(".modal");
 export const closeModalButton = document.querySelector(".close-button");

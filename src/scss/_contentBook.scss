@@ -50,10 +50,18 @@
                     content: "- ";
                 }
             }
+            a {
+                text-decoration: none;
+            }
+
             .btn {
                 @extend %btn;
                 margin-top: 20px;
                 margin: 20px auto 0;
+
+                &:hover {
+                    text-decoration: none;
+                }
             }
         }
 
