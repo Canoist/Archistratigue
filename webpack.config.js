@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     mode: "development",
@@ -28,30 +29,11 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/i,
-                use: ["style-loader", "css-loader"],
+                use: [MiniCssExtractPlugin.loader, "css-loader"],
             },
             {
                 test: /\.scss$/i,
-                use: [
-                    // Creates `style` nodes from JS strings
-                    {
-                        loader: "style-loader",
-                        options: {
-                            insert: "head", // insert style tag inside of <head>
-                            injectType: "singletonStyleTag", // this is for wrap all your style in just one style tag
-                        },
-                    },
-                    // Translates CSS into CommonJS
-                    "css-loader",
-                    "resolve-url-loader",
-                    // Compiles Sass to CSS
-                    {
-                        loader: "sass-loader",
-                        options: {
-                            sourceMap: true, // <-- !!IMPORTANT!!
-                        },
-                    },
-                ],
+                use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
             },
             {
                 test: /\.m?js$/,
@@ -93,8 +75,9 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: "./public/index.html",
-            inject: 'head',
-            scriptLoading: 'blocking',
+        }),
+        new MiniCssExtractPlugin({
+            filename: "./styles/main.css",
         }),
     ],
 };
