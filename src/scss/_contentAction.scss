@@ -14,11 +14,21 @@
     .action-element {
         display: flex;
         margin: 0 auto;
+        align-items: center;
         gap: 68px;
 
-        a {
+        div {
             order: 2;
-            display: inline-block;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            a {
+                display: inline-block;
+            }
+            @media screen and (max-width: 1024px) {
+                align-items: center;
+            }
         }
 
         @media screen and (max-width: 1024px) {
